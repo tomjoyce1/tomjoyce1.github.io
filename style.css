@@ -39,6 +39,22 @@
   z-index: 10;
   cursor: move;
 }
+.popup#cvWindow {
+  position: absolute;
+  top: 44%;
+  left: 30%;
+  width: 430px;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+.popup#chessWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 430px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
 .title-bar {
   cursor: move;
 }
