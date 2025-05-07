@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tomOS</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-image">
+      <!-- desktop icon -->
+      <div id="desktop">
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/cv.png" />
+          <p>Tom CV</p>
+        </div>
+
+        <div class="icon" onclick="openWindow('blogWindow')">
+          <img src="./assets/globe.png" />
+          <p>Blogs</p>
+        </div>
+
+        <div class="icon" onclick="openWindow('projectsWindow')">
+          <img src="./assets/folder.png" />
+          <p>Projects</p>
+        </div>
+      </div>
+
+      <!-- start menu -->
+
+      <!-- WINDOW windows -->
+
+      <!-- cv windows -->
+      <div class="window" id="cvWindow" style="display: none">
+        <div class="title-bar">
+          <div class="title-bar-text">CV</div>
+
+          <div class="title-bar-controls">
+            <button onClick="closeWindow('cvWindow')"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p>YOOOOOOOOOOOO</p>
+          <iframe src="assets/cv.pdf" width="100%" height="300px" />
+        </div>
+      </div>
+
+      <!-- <button onClick="openWindow('cvWindow')">Open CV but</button> -->
+    </div>
+  </body>
+</html>
