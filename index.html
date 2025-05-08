@@ -12,13 +12,59 @@
     <div class="bg-image">
       <!-- backdrop grid of icons -->
       <div class="desktop-icons">
+        <!-- icon 1 -->
         <div class="icon" onclick="openWindow('cvWindow')">
-          <img src="./assets/gitlogo.png" alt="CV"/>
+          <img src="./assets/briefcase.ico" alt="CV" />
           <span>CV</span>
-
         </div>
 
+        <!-- icon 2 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/accessibility_two_windows.ico" alt="CV" />
+          <span>LinkedIn</span>
+        </div>
 
+        <!-- icon 3 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/address_book.ico" alt="CV" />
+          <span>GitHub</span>
+        </div>
+
+        <!-- icon 4 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/calendar.ico" alt="CV" />
+          <span>Projects</span>
+        </div>
+
+        <!-- icon 5 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/cd_drive.ico" alt="CV" />
+          <span>Skills/Experience</span>
+        </div>
+
+        <!-- icon 6 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/computer_user_pencil.ico" alt="CV" />
+          <span>Contact</span>
+        </div>
+
+        <!-- icon 7 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/application_hourglass.ico" alt="CV" />
+          <span>About me</span>
+        </div>
+
+        <!-- icon 8 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/chess.png" alt="CV" />
+          <span>Chess</span>
+        </div>
+
+        <!-- icon 8 -->
+        <div class="icon" onclick="openWindow('cvWindow')">
+          <img src="./assets/computer_win_lock.ico" alt="CV" />
+          <span>Paint</span>
+        </div>
       </div>
 
       <!-- start menu -->
@@ -54,24 +100,6 @@
           </section>
         </div>
       </div>
-      <!-- chess -->
-      <div class="window popup" id="chessWindow" style="display: block">
-        <div class="title-bar">
-          <div class="title-bar-text">Chess</div>
-
-          <div class="title-bar-controls">
-            <button onclick="closeWindow('chessWindow')"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <iframe
-            src="https://lichess.org/training/frame?theme=brown&bg=dark"
-            style="width: 400px; aspect-ratio: 10/11"
-            allowtransparency="true"
-            frameborder="0"
-          ></iframe>
-        </div>
-      </div>
 
       <!-- game -->
       <div class="window popup" id="chessWindow2" style="display: block">
@@ -104,13 +132,7 @@
           <iframe src="https://jspaint.app" width="100%" height="100%"></iframe>
         </div>
       </div>
-      <div id="app"></div>
-      <script src="https://unpkg.com/webamp"></script>
-      <script>
-        const app = document.getElementById("app");
-        const webamp = new Webamp();
-        webamp.renderWhenReady(app);
-      </script>
+
       <!-- cv windows -->
       <div class="window popup" id="cvWindow" style="display: block">
         <div class="title-bar">
