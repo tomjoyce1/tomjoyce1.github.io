@@ -18,50 +18,54 @@
           <span>CV</span>
         </div>
 
-        <!-- icon 2 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
-          <img src="./assets/accessibility_two_windows.ico" alt="CV" />
-          <span>LinkedIn</span>
+        <!-- icon 2 linkedin -->
+        <div class="icon">
+          <a href="https://www.linkedin.com/in/thomasjoyce1/" target="_blank">
+            <img src="./assets/accessibility_two_windows.ico" alt="CV" />
+            <span>LinkedIn</span>
+          </a>
         </div>
 
         <!-- icon 3 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
-          <img src="./assets/address_book.ico" alt="CV" />
-          <span>GitHub</span>
+        <div class="icon">
+          <a href="https://github.com/tomjoyce1" target="_blank">
+            <img src="./assets/address_book.ico" alt="CV" />
+            <span>GitHub</span>
+          </a>
         </div>
 
         <!-- icon 4 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('projectsList')">
           <img src="./assets/calendar.ico" alt="CV" />
           <span>Projects</span>
         </div>
 
         <!-- icon 5 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('skillsPopup')">
           <img src="./assets/cd_drive.ico" alt="CV" />
           <span>Skills/Experience</span>
         </div>
 
         <!-- icon 6 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('contactPopup')">
           <img src="./assets/computer_user_pencil.ico" alt="CV" />
           <span>Contact</span>
         </div>
 
         <!-- icon 7 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('aboutMe')">
           <img src="./assets/application_hourglass.ico" alt="CV" />
           <span>About me</span>
         </div>
 
         <!-- icon 8 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('chessWindow2')">
           <img src="./assets/chess.png" alt="CV" />
           <span>Chess</span>
         </div>
 
         <!-- icon 8 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
+        <div class="icon" onclick="openWindow('paintWindow')">
           <img src="./assets/computer_win_lock.ico" alt="CV" />
           <span>Paint</span>
         </div>
@@ -76,14 +80,19 @@
 
       <!-- WINDOW windows -->
 
-      <div class="window popup" style="margin: 32px; width: 250px">
+      <!-- about me -->
+      <div class="window popup" id="aboutMe" style="margin: 32px; width: 250px">
         <div class="title-bar">
           <div class="title-bar-text">About Me</div>
 
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
+
             <button aria-label="Maximize"></button>
-            <button aria-label="Close"></button>
+            <button
+              onclick="closeWindow('aboutMe')"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
         <div class="window-body">
@@ -101,13 +110,103 @@
         </div>
       </div>
 
+      <!-- My projects popup -->
+      <div
+        class="window popup"
+        id="projectsList"
+        style="margin: 32px; width: 250px"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">My Projects</div>
+
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('projectsList')"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p>• Project 1 • Project 1 • Project 1 • Project 1 • Project 1</p>
+          <section class="field-row" style="justify-content: flex-end">
+            <button>OK</button>
+            <button>Cancel</button>
+          </section>
+        </div>
+      </div>
+
+      <!-- Skills/Experience popup -->
+      <div
+        class="window popup"
+        id="skillsPopup"
+        style="margin: 32px; width: 250px"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">My Skills</div>
+
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('skillsPopup')"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p>• skill 1 • Project 1 • Project 1 • Project 1 • Project 1</p>
+          <section class="field-row" style="justify-content: flex-end">
+            <button>OK</button>
+            <button>Cancel</button>
+          </section>
+        </div>
+      </div>
+
+      <!-- Contact Me popup -->
+      <div
+        class="window popup"
+        id="contactPopup"
+        style="margin: 32px; width: 250px"
+      >
+        <div class="title-bar">
+          <div class="title-bar-text">Contact Me</div>
+
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('contactPopup')"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p>• Email -</p>
+          <section class="field-row" style="justify-content: flex-end">
+            <button>OK</button>
+            <button>Cancel</button>
+          </section>
+        </div>
+      </div>
+
       <!-- game -->
       <div class="window popup" id="chessWindow2" style="display: block">
         <div class="title-bar">
           <div class="title-bar-text">Chess</div>
 
           <div class="title-bar-controls">
-            <button onclick="closeWindow('chessWindow2')"></button>
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('chessWindow2')"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
         <div class="window-body">
@@ -119,13 +218,20 @@
           ></iframe>
         </div>
       </div>
+
       <!-- paint -->
       <div class="window popup" id="paintWindow" style="display: block">
         <div class="title-bar">
           <div class="title-bar-text">Paint</div>
 
           <div class="title-bar-controls">
-            <button onclick="closeWindow('paintWindow')"></button>
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('paintWindow')"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
         <div class="window-body">
@@ -139,7 +245,13 @@
           <div class="title-bar-text">CV</div>
 
           <div class="title-bar-controls">
-            <button onclick="closeWindow('cvWindow')"></button>
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button
+              onclick="closeWindow('cvWindow')"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
         <div class="window-body">
