@@ -18,8 +18,10 @@
       <div class="desktop-icons">
         <!-- icon 1 -->
         <div class="icon" onclick="openWindow('cvWindow')">
-          <img src="./assets/briefcase.ico" alt="CV" />
-          <span>CV</span>
+          <a href="assets/cv.pdf" target="_blank">
+            <img src="./assets/briefcase.ico" alt="CV" />
+            <span>CV/Resume</span>
+          </a>
         </div>
 
         <!-- icon 2 linkedin -->
@@ -80,6 +82,12 @@
 
           <span>Blogs</span>
         </div>
+
+        <div class="icon" onclick="openWindow('blogPost')">
+          <img src="./assets/address_book.ico" alt="opening" />
+
+          <span>Intro</span>
+        </div>
       </div>
 
       <!-- start menu -->
@@ -111,8 +119,7 @@
             • I’m a software engineer.<br />
             • Currently studying Immersive Software Engineering at the
             University of Limerick <br />
-            • I'm in second year, studying AI, C++, Networking and Cybersecurity
-            modules.
+            • Studying AI, C++, Networking and Cybersecurity.
           </p>
           <section class="field-row" style="justify-content: flex-end">
             <button>OK</button>
@@ -206,30 +213,92 @@
       </div>
 
       <!-- blogsWindow popup -->
+      <!-- Blog Post Window -->
+
       <div
         class="window popup"
-        id="blogsWindow"
-        style="margin: 32px; width: 250px; display: none"
+        id="blogPost"
+        style="
+          width: 600px;
+          display: block;
+          position: absolute;
+          top: 150px;
+          left: 150px;
+        "
       >
         <div class="title-bar">
-          <div class="title-bar-text">Blogs</div>
-
+          <div class="title-bar-text">
+            My First Blog Post - Windows 98 Style
+          </div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
-
             <button aria-label="Maximize"></button>
             <button
-              onclick="closeWindow('blogsWindow')"
+              onclick="closeWindow('blogPost')"
               aria-label="Close"
             ></button>
           </div>
         </div>
+
         <div class="window-body">
-          <p>• Email -</p>
-          <section class="field-row" style="justify-content: flex-end">
-            <button>OK</button>
-            <button>Cancel</button>
-          </section>
+          <menu role="tablist">
+            <li role="tab" aria-selected="true">File</li>
+            <li role="tab">Edit</li>
+            <li role="tab">Help</li>
+          </menu>
+          <div class="status-bar">
+            <p class="status-bar-field">Directory: /My Portfolio</p>
+            <p class="status-bar-field">Items: 9</p>
+          </div>
+
+          <div style="padding: 16px">
+            <img
+              src="./assets/computer.ico"
+              style="float: left; margin-right: 16px"
+              alt="Computer Icon"
+            />
+
+            <h2>BD</h2>
+            <div>
+              <p>
+                • I’m a software engineer.<br />
+                • Currently studying Immersive Software Engineering at the
+                University of Limerick <br />
+                • Studying AI, C++, Networking and Cybersecurity.
+              </p>
+              <li>Using 98.css for styling</li>
+
+              <section class="field-row" style="justify-content: flex-end">
+                <button>OK</button>
+                <button>Cancel</button>
+              </section>
+            </div>
+
+            <div
+              class="sunken-panel"
+              style="padding: 16px; margin-bottom: 16px"
+            >
+              <p>
+                Today I'll show you how to build retro-style websites using
+                98.css...
+              </p>
+            </div>
+
+            <fieldset>
+              <legend>Key Points</legend>
+              <ul class="tree-view">
+                <li>Using 98.css for styling</li>
+                <li>Creating window components</li>
+                <li>Adding retro icons</li>
+              </ul>
+            </fieldset>
+
+            <div style="margin-top: 16px">
+              <button>👍 Like</button>
+              <button>💾 Save</button>
+              <button>📤 Share</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -275,26 +344,6 @@
         </div>
         <div class="window-body">
           <iframe src="https://jspaint.app" width="100%" height="100%"></iframe>
-        </div>
-      </div>
-
-      <!-- cv windows -->
-      <div class="window popup" id="cvWindow" style="display: none">
-        <div class="title-bar">
-          <div class="title-bar-text">CV</div>
-
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('cvWindow')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <iframe src="assets/cv.pdf" width="100%" height="300px" />
         </div>
       </div>
 

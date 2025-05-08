@@ -1,4 +1,20 @@
-body {
+.window-body p {
+  font-family: "MS Sans Serif", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.window-body p br {
+  margin-bottom: 8px;
+  content: "";
+  display: block;
+}
+
+.window-body p • {
+  margin-right: 4px;
 }
 
 .bg-image {
