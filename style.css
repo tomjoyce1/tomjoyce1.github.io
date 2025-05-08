@@ -47,6 +47,15 @@
   transform: translate(-50%, -50%);
   z-index: 9;
 }
+
+.popup#paintWindow {
+  position: absolute;
+  top: 64%;
+  left: 30%;
+  height: 60%;
+
+  z-index: 9;
+}
 .popup#chessWindow {
   position: absolute;
   top: 50%;
@@ -60,4 +69,24 @@
 }
 .window-body {
   cursor: default;
+}
+
+.desktop-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  width: 300px;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
 }
