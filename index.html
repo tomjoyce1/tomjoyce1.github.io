@@ -135,6 +135,30 @@
         </div>
       </div>
 
+      <!-- nuke -->
+      <div class="window popup" id="nuke" style="margin: 32px; width: 250px">
+        <div class="title-bar">
+          <div class="title-bar-text">Don't Press</div>
+
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+
+            <button aria-label="Maximize"></button>
+            <button onclick="closeWindow('nuke')" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="warning">⚠ WARNING: Do Not Press</p>
+
+          <section class="field-row" style="justify-content: flex-end">
+            <button class="button" onclick="window.location.href='modern.html'">
+              ⚠ Launch
+            </button>
+            <button>Cancel</button>
+          </section>
+        </div>
+      </div>
+
       <!-- My projects popup -->
       <div
         class="window popup"

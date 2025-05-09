@@ -1,3 +1,22 @@
+.warning {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .window-body p {
   font-family: "MS Sans Serif", "Segoe UI", Arial, sans-serif;
   font-size: 12px;
