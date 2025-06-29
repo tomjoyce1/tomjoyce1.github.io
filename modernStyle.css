@@ -14,13 +14,14 @@
   font-family: poppins, monospace;
 }
 
-.desktop-icons {
+.desktop-icons-new {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 16px;
   padding: 20px;
   width: 300px;
 }
+
 .icon {
   text-decoration: none;
   display: flex;
@@ -56,9 +57,10 @@ body {
   transition-duration: 0.5s;
 }
 
-body {
-  display: grid;
-  grid-template-columns: minmax(700px, 1fr) 1fr;
+.centre-popup {
+  /* position: fixed; */
+  top: 50%;
+  left: 30%;
 }
 
 nav {

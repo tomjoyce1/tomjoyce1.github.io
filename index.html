@@ -243,95 +243,19 @@
         </div>
       </div>
 
-      <!-- blogsWindow popup -->
-      <!-- Blog Post Window -->
+      <!-- proj popup -->
 
-      <div
-        class="window popup"
-        id="blogPost"
-        style="
-          width: 600px;
-          display: block;
-          position: absolute;
-          top: 150px;
-          left: 150px;
-        "
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">
-            My First Blog Post - Windows 98 Style
-          </div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('blogPost')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
+      <div id="projectsWindow"></div>
 
-        <div class="window-body">
-          <menu role="tablist">
-            <li role="tab" aria-selected="true">File</li>
-            <li role="tab">Edit</li>
-            <li role="tab">Help</li>
-          </menu>
-          <div class="status-bar">
-            <p class="status-bar-field">Directory: /My Portfolio</p>
-            <p class="status-bar-field">Items: 9</p>
-          </div>
+      <script>
+        fetch("ProjectsDisplay.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("projectsWindow").innerHTML = html;
 
-          <div style="padding: 16px">
-            <img
-              src="./assets/computer.ico"
-              style="float: left; margin-right: 16px"
-              alt="Computer Icon"
-            />
-
-            <h2>BD</h2>
-            <div>
-              <p>
-                • I’m a software engineer.<br />
-                • Currently studying Immersive Software Engineering at the
-                University of Limerick <br />
-                • Studying AI, C++, Networking and Cybersecurity.
-              </p>
-              <li>Using 98.css for styling</li>
-
-              <section class="field-row" style="justify-content: flex-end">
-                <button>OK</button>
-                <button>Cancel</button>
-              </section>
-            </div>
-
-            <div
-              class="sunken-panel"
-              style="padding: 16px; margin-bottom: 16px"
-            >
-              <p>
-                Today I'll show you how to build retro-style websites using
-                98.css...
-              </p>
-            </div>
-
-            <fieldset>
-              <legend>Key Points</legend>
-              <ul class="tree-view">
-                <li>Using 98.css for styling</li>
-                <li>Creating window components</li>
-                <li>Adding retro icons</li>
-              </ul>
-            </fieldset>
-
-            <div style="margin-top: 16px">
-              <button>👍 Like</button>
-              <button>💾 Save</button>
-              <button>📤 Share</button>
-            </div>
-          </div>
-        </div>
-      </div>
+            makePopupsDraggable();
+          });
+      </script>
 
       <!-- game -->
       <div class="window popup" id="chessWindow2" style="display: none">
