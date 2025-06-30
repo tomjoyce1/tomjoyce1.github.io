@@ -20,8 +20,6 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="shutdown-overlay"></div>
-
     <div class="bg-image">
       <!-- backdrop grid of icons -->
       <div class="desktop-icons">
@@ -339,13 +337,9 @@
 
   <script>
     document.getElementById("warning-button").onclick = function () {
-      const shutdownOverlay = document.getElementById("shutdown-overlay");
-
-      shutdownOverlay.classList.add("active");
-
       setTimeout(() => {
         window.location.href = "modern.html";
-      }, 700);
+      });
     };
   </script>
 </html>
