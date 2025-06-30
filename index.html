@@ -20,6 +20,8 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div id="glitch-overlay"></div>
+
     <div class="bg-image">
       <!-- backdrop grid of icons -->
       <div class="desktop-icons">
@@ -151,9 +153,7 @@
           <p class="warning">⚠ WARNING: Do Not Press</p>
 
           <section class="field-row" style="justify-content: flex-end">
-            <button class="button" onclick="window.location.href='modern.html'">
-              ⚠ Launch
-            </button>
+            <button id="warning-button" class="button">⚠ Launch</button>
             <button>Cancel</button>
           </section>
         </div>
@@ -336,4 +336,25 @@
       <!-- <button onClick="openWindow('cvWindow')">Open CV but</button> -->
     </div>
   </body>
+  <script>
+    function triggerPageGlitch() {
+      const overlay = document.getElementById("glitch-overlay");
+      overlay.classList.add("glitching");
+      setTimeout(() => {
+        overlay.classList.remove("glitching");
+      }, 500); // match animation duration
+    }
+
+    // Example: Trigger on page load
+
+    // Or trigger on a button click:
+    document.getElementById("warning-button").onclick = function () {
+      triggerPageGlitch();
+
+      // remove the timeout - slows down. make it 1 page app
+      setTimeout(() => {
+        window.location.href = "modern.html";
+      }, 500);
+    };
+  </script>
 </html>
