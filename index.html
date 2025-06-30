@@ -20,7 +20,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="glitch-overlay"></div>
+    <div id="shutdown-overlay"></div>
 
     <div class="bg-image">
       <!-- backdrop grid of icons -->
@@ -336,25 +336,16 @@
       <!-- <button onClick="openWindow('cvWindow')">Open CV but</button> -->
     </div>
   </body>
+
   <script>
-    function triggerPageGlitch() {
-      const overlay = document.getElementById("glitch-overlay");
-      overlay.classList.add("glitching");
-      setTimeout(() => {
-        overlay.classList.remove("glitching");
-      }, 500); // match animation duration
-    }
-
-    // Example: Trigger on page load
-
-    // Or trigger on a button click:
     document.getElementById("warning-button").onclick = function () {
-      triggerPageGlitch();
+      const shutdownOverlay = document.getElementById("shutdown-overlay");
 
-      // remove the timeout - slows down. make it 1 page app
+      shutdownOverlay.classList.add("active");
+
       setTimeout(() => {
         window.location.href = "modern.html";
-      }, 500);
+      }, 700);
     };
   </script>
 </html>

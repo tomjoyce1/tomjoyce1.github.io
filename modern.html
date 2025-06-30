@@ -31,8 +31,23 @@
     <script type="text/javascript" src="./modernScript.js" defer></script>
   </head>
 
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const overlay = document.getElementById("shutdown-overlay");
+
+      setTimeout(() => {
+        overlay.classList.add("active");
+      }, 100);
+
+      overlay.addEventListener("transitioned", () => {
+        overlay.style.display = "none";
+      });
+    });
+  </script>
+
   <body>
     <!-- navbar -->
+    <div id="shutdown-overlay"></div>
     <nav>
       <div id="nav-container">
         <div id="first-container">
