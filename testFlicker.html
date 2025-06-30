@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="testFlicker.css" />
+<header></header>
+
+<body>
+  <div class="container">
+    <button id="glitch-btn" z-index="1">
+      Press to trigger glitch transition
+    </button>
+    <img src=".\assets\grass.jpg" id="image1" class="active" />
+
+    <img src=".\images\1dark.jpg" id="image2" />
+  </div>
+</body>
+<script>
+  // Add glitch on button click
+  const btn = document.getElementById("glitch-btn");
+  const img1 = document.getElementById("image1");
+  const img2 = document.getElementById("image2");
+  let showingFirst = true;
+
+  btn.onclick = function () {
+    const current = showingFirst ? img1 : img2;
+    const next = showingFirst ? img2 : img1;
+
+    // Add glitch class to both for effect
+    current.classList.add("glitch");
+    next.classList.add("glitch");
+
+    setTimeout(() => {
+      // Switch images after glitch
+      current.classList.remove("active");
+      next.classList.add("active");
+    }, 200); // halfway through the animation
+
+    setTimeout(() => {
+      // Remove glitch class after animation
+      current.classList.remove("glitch");
+      next.classList.remove("glitch");
+    }, 400);
+
+    showingFirst = !showingFirst;
+  };
+</script>
+
+<header></header>
