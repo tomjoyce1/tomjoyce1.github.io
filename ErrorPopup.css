@@ -1,0 +1,91 @@
+/* ErrorPopup.css: Windows 11 style error popup */
+.w11-error-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 340px;
+  max-width: 96vw;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  font-family: "Segoe UI Variable", "Segoe UI", "Arial", sans-serif;
+  overflow: hidden;
+  border: none;
+  animation: w11-popup-fadein 0.2s;
+}
+@keyframes w11-popup-fadein {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.w11-error-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 20px 24px 0 24px;
+  border-bottom: none;
+}
+.w11-error-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.w11-error-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  flex: 1;
+}
+.w11-error-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #888;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.w11-error-close:hover {
+  background: #e5e5e5;
+  color: #e81123;
+}
+.w11-error-body {
+  padding: 18px 24px 0 68px;
+  font-size: 1.04rem;
+  color: #222;
+  min-height: 32px;
+}
+.w11-error-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 24px 18px 24px;
+  background: #fff;
+  border-top: none;
+}
+.w11-error-ok {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background 0.15s;
+}
+.w11-error-ok:hover {
+  background: #1e40af;
+}

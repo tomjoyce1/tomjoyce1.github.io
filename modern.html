@@ -32,19 +32,12 @@
   </head>
 
   <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const overlay = document.getElementById("shutdown-overlay");
-
-      setTimeout(() => {
-        overlay.classList.add("active");
-      }, 100);
-
-      overlay.addEventListener("transitioned", () => {
-        overlay.style.display = "none";
-      });
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        document.body.style.backgroundImage = "url('./images/1dark.jpg')";
+      }, 2000);
     });
   </script>
-
   <body>
     <!-- navbar -->
 
@@ -170,12 +163,14 @@
       </div>
     </nav>
 
+
+
     <!-- app grid -->
     <div class="desktop-icons-new">
       <!-- icon 1 -->
       <div class="icon" onclick="openWindow('cvWindow')">
         <a href="assets/cv.pdf" target="_blank">
-          <img src="./assets/briefcase.ico" alt="CV" />
+          <img src="assets\modernIcons\cvresume.webp" alt="CV" />
           <span>CV/Resume</span>
         </a>
       </div>
@@ -183,7 +178,7 @@
       <!-- icon 2 linkedin -->
       <div class="icon">
         <a href="https://www.linkedin.com/in/thomasjoyce1/" target="_blank">
-          <img src="./assets/accessibility_two_windows.ico" alt="CV" />
+          <img src="assets\modernIcons\linkedin.webp" alt="CV" />
           <span>LinkedIn</span>
         </a>
       </div>
@@ -191,7 +186,7 @@
       <!-- icon 3 -->
       <div class="icon">
         <a href="https://github.com/tomjoyce1" target="_blank">
-          <img src="./assets/chart1.ico" alt="Github" />
+          <img src="assets\modernIcons\github.webp" alt="Github" />
 
           <span>GitHub</span>
         </a>
@@ -199,50 +194,44 @@
 
       <!-- icon 4 -->
       <div class="icon" onclick="openWindow('projectsList')">
-        <img src="./assets/calendar.ico" alt="CV" />
+        <img src="assets\modernIcons\projects.webp" alt="CV" />
         <span>Projects</span>
       </div>
 
       <!-- icon 5 -->
       <div class="icon" onclick="openWindow('skillsPopup')">
-        <img src="./assets/cd_drive.ico" alt="CV" />
-        <span>Skills/Experience</span>
+        <img src="assets\modernIcons\skillsexperience.webp" alt="CV" />
+        <span>Skills</span>
       </div>
 
       <!-- icon 6 -->
       <div class="icon" onclick="openWindow('contactPopup')">
-        <img src="./assets/computer_user_pencil.ico" alt="CV" />
+        <img src="assets\modernIcons\aboutme.webp" alt="CV" />
         <span>Contact</span>
       </div>
 
       <!-- icon 7 -->
       <div class="icon" onclick="openWindow('aboutMe')">
-        <img src="./assets/application_hourglass.ico" alt="CV" />
+        <img src="assets\modernIcons\aboutme.webp" alt="CV" />
         <span>About me</span>
       </div>
 
       <!-- icon 8 -->
       <div class="icon" onclick="openWindow('chessWindow2')">
-        <img src="./assets/chess.png" alt="CV" />
+        <img src="assets\modernIcons\chess.webp" alt="CV" />
         <span>Chess</span>
       </div>
 
       <!-- icon 8 -->
       <div class="icon" onclick="openWindow('paintWindow')">
-        <img src="./assets/computer_win_lock.ico" alt="CV" />
+        <img src="assets\modernIcons\paint.webp" alt="CV" />
         <span>Paint</span>
       </div>
       <!-- icon 9 -->
       <div class="icon" onclick="openWindow('blogsWindow')">
-        <img src="./assets/address_book.ico" alt="CV" />
+        <img src="assets\modernIcons\blog.png" alt="CV" />
 
         <span>Blogs</span>
-      </div>
-
-      <div class="icon" onclick="openWindow('blogPost')">
-        <img src="./assets/address_book.ico" alt="opening" />
-
-        <span>Intro</span>
       </div>
     </div>
 
@@ -627,6 +616,7 @@
       <video autoplay muted id="myVideo">
         <source src="./images/video-1dark.mp4" type="video/mp4" />
       </video>
+
       <section id="not-mobile-friendly">
         <div id="titolo-errore">Dispositivo NON Sopportato.</div>
 

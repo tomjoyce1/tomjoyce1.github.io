@@ -7,21 +7,24 @@
   <body>
     <div
       class="window popup"
-      id="blogPost"
+      id="projectsDirectory"
       style="
         width: 600px;
         display: block;
         position: absolute;
-        top: 150px;
-        left: 150px;
+        top: 20%;
+        left: 58%;
       "
     >
       <div class="title-bar">
         <div class="title-bar-text">My Projects</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
+          <button aria-label="Minimize" onclick="minimizeWindow(this)"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow(this)"></button>
+          <button
+            aria-label="Close"
+            onclick="closeWindow('projectsDirectory')"
+          ></button>
         </div>
       </div>
       <div class="window-body">
@@ -218,4 +221,35 @@
       </div>
     </div>
   </body>
+  <script>
+    function minimizeWindow(button) {
+      const popup = button.closest(".window.popup");
+      if (!popup) return;
+      popup.style.display = "none";
+    }
+
+    function maximizeWindow(button) {
+      const popup = button.closest(".window.popup");
+      if (!popup) return;
+      // Toggle maximized state
+      if (!popup.classList.contains("maximized")) {
+        popup.dataset.prevStyle = popup.getAttribute("style") || "";
+        popup.style.top = "0";
+        popup.style.left = "0";
+        popup.style.width = "100vw";
+        popup.style.height = "100vh";
+        popup.style.margin = "0";
+        popup.classList.add("maximized");
+      } else {
+        // Restore previous style
+        popup.setAttribute("style", popup.dataset.prevStyle);
+        popup.classList.remove("maximized");
+      }
+    }
+
+    function closeWindow(id) {
+      const popup = document.getElementById(id);
+      if (popup) popup.style.display = "none";
+    }
+  </script>
 </html>

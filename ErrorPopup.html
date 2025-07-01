@@ -1,0 +1,28 @@
+<!-- ErrorPopup.html: Windows 11 style error popup template -->
+<link rel="stylesheet" href="ErrorPopup.css" />
+
+<body>
+  <button onclick="showErrorPopup('someth')">Show error</button>
+  <div class="w11-error-popup" id="errorPopup" style="display: none">
+    <div class="w11-error-header">
+      <span class="w11-error-title">Error</span>
+      <button class="w11-error-close" onclick="closeErrorPopup()">
+        &#10005;
+      </button>
+    </div>
+    <div class="w11-error-body" id="errorPopupMessage">An error occurred.</div>
+    <div class="w11-error-footer">
+      <button class="w11-error-ok" onclick="closeErrorPopup()">OK</button>
+    </div>
+  </div>
+</body>
+
+<script>
+  function showErrorPopup(message) {
+    document.getElementById("errorPopupMessage").textContent = message;
+    document.getElementById("errorPopup").style.display = "block";
+  }
+  function closeErrorPopup() {
+    document.getElementById("errorPopup").style.display = "none";
+  }
+</script>
