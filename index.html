@@ -18,6 +18,20 @@
 
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <style>
+      .popup-animate {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.4s cubic-bezier(0.4, 2, 0.6, 1),
+          transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+        pointer-events: none;
+      }
+      .popup-animate-in {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        pointer-events: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="bg-image">
@@ -102,7 +116,7 @@
 
       <!-- about me -->
       <div
-        class="window popup"
+        class="window popup popup-animate"
         id="aboutMe"
         style="
           position: absolute;
@@ -143,7 +157,7 @@
 
       <!-- nuke -->
       <div
-        class="window popup"
+        class="window popup popup-animate"
         id="nuke"
         style="position: absolute; top: 312px; left: 690px; width: 250px"
       >
@@ -165,40 +179,6 @@
           <section class="field-row" style="justify-content: flex-end">
             <button id="warning-button" class="button">⚠ Launch</button>
             <button onclick="closeWindow('nuke')">Cancel</button>
-          </section>
-        </div>
-      </div>
-
-      <!-- My projects popup -->
-      <div
-        class="window popup"
-        id="projectsList"
-        style="
-          position: absolute;
-          top: 192px;
-          left: 100px;
-          width: 250px;
-          visibility: hidden;
-        "
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">My Projects</div>
-
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('projectsList')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <p>• Project 1 • Project 1 • Project 1 • Project 1 • Project 1</p>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('projectsList')">OK</button>
-            <button onclick="closeWindow('projectsList')">Cancel</button>
           </section>
         </div>
       </div>
@@ -435,7 +415,7 @@
 
       <!-- proj popup -->
 
-      <div id="projectsWindow"></div>
+      <div id="projectsWindow" class="popup-animate"></div>
 
       <script>
         fetch("ProjectsDisplay.html")
@@ -474,7 +454,7 @@
 
       <!-- paint -->
       <div
-        class="window popup"
+        class="window popup popup-animate"
         id="paintWindow"
         style="
           position: absolute;
@@ -579,6 +559,21 @@
           };
           // controls[2] is close, already set inline with closeWindow('popupId')
         }
+      });
+
+      // Animate popups
+      const popups = [
+        document.getElementById("aboutMe"),
+        document.getElementById("nuke"),
+        document.getElementById("paintWindow"),
+        document.getElementById("projectsWindow"),
+      ];
+      let delay = 400; // ms
+      popups.forEach((popup, i) => {
+        if (!popup) return;
+        setTimeout(() => {
+          popup.classList.add("popup-animate-in");
+        }, delay * (i + 1));
       });
     });
   </script>
