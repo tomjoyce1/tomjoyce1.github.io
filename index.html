@@ -128,7 +128,9 @@
         <div class="window-body">
           <p>
             • I’m studying Immersive Software Engineering<br />
-            • Worked at Amazon Web Services, Johnson & Johnson and BD <br />
+            • Worked on Anomaly Detection ML models at Amazon Web Services,
+            generative AI at *Johnson & Johnson* and React microservices at BD
+            <br />
             • Undisputed ISE Chess Champ.
           </p>
           <section class="field-row" style="justify-content: flex-end">
@@ -148,10 +150,11 @@
           <div class="title-bar-text">Don't Press</div>
 
           <div class="title-bar-controls">
-            <button aria-label="Minimize" onclick="minimiseWindow(this)></button>
+            <button
+              onclick="closeWindow('nuke')"
+              aria-label="Minimize"
+            ></button>
 
-            <button aria-label="Maximize" onclick="maximiseWindow(this)"></button>
-            
             <button onclick="closeWindow('nuke')" aria-label="Close"></button>
           </div>
         </div>
@@ -160,7 +163,7 @@
 
           <section class="field-row" style="justify-content: flex-end">
             <button id="warning-button" class="button">⚠ Launch</button>
-            <button onclick="closeWindow('nuke')" >Cancel</button>
+            <button onclick="closeWindow('nuke')">Cancel</button>
           </section>
         </div>
       </div>
@@ -194,8 +197,7 @@
           <p>• Project 1 • Project 1 • Project 1 • Project 1 • Project 1</p>
           <section class="field-row" style="justify-content: flex-end">
             <button onclick="closeWindow('projectsList')">OK</button>
-            <button               onclick="closeWindow('projectsList')"
->Cancel</button>
+            <button onclick="closeWindow('projectsList')">Cancel</button>
           </section>
         </div>
       </div>
@@ -223,8 +225,7 @@
           <p>• skill 1 • Project 1 • Project 1 • Project 1 • Project 1</p>
           <section class="field-row" style="justify-content: flex-end">
             <button onclick="closeWindow('skillsPopup')">OK</button>
-            <button               onclick="closeWindow('skillsPopup')"
->Cancel</button>
+            <button onclick="closeWindow('skillsPopup')">Cancel</button>
           </section>
         </div>
       </div>
@@ -252,8 +253,7 @@
           <p>• Email -</p>
           <section class="field-row" style="justify-content: flex-end">
             <button onclick="closeWindow('contactPopup')">OK</button>
-            <button               onclick="closeWindow('contactPopup')"
->Cancel</button>
+            <button onclick="closeWindow('contactPopup')">Cancel</button>
           </section>
         </div>
       </div>
@@ -315,12 +315,18 @@
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
-            <button onclick="closeWindow('paintWindow')" aria-label="Close"></button>
+            <button
+              onclick="closeWindow('paintWindow')"
+              aria-label="Close"
+            ></button>
           </div>
         </div>
         <!-- inner box -->
-        <div class="window-body" style="height: calc(100% - 32px); padding: 0;">
-          <iframe src="https://jspaint.app/?load=assets/modernIcons/PENUP_20250702_195740.png" style="width:100%;height:100%;border:none;display:block;"></iframe>
+        <div class="window-body" style="height: calc(100% - 32px); padding: 0">
+          <iframe
+            src="https://jspaint.app/?load=assets/modernIcons/PENUP_20250702_195740.png"
+            style="width: 100%; height: 100%; border: none; display: block"
+          ></iframe>
         </div>
       </div>
 
@@ -360,42 +366,45 @@
       });
     };
 
-
     function minimizeWindow(button) {
-  const popup = button.closest('.window.popup');
-  if (!popup) return;
-  popup.style.display = 'none';
-}
+      const popup = button.closest(".window.popup");
+      if (!popup) return;
+      popup.style.display = "none";
+    }
 
     function maximizeWindow(button) {
-      const popup = button.closest('.window.popup');
+      const popup = button.closest(".window.popup");
       if (!popup) return;
       // Toggle maximized state
-      if (!popup.classList.contains('maximized')) {
-        popup.dataset.prevStyle = popup.getAttribute('style') || '';
-        popup.style.top = '0';
-        popup.style.left = '0';
-        popup.style.width = '100vw';
-        popup.style.height = '100vh';
-        popup.style.margin = '0';
-        popup.classList.add('maximized');
+      if (!popup.classList.contains("maximized")) {
+        popup.dataset.prevStyle = popup.getAttribute("style") || "";
+        popup.style.top = "0";
+        popup.style.left = "0";
+        popup.style.width = "100vw";
+        popup.style.height = "100vh";
+        popup.style.margin = "0";
+        popup.classList.add("maximized");
       } else {
         // Restore previous style
-        popup.setAttribute('style', popup.dataset.prevStyle);
-        popup.classList.remove('maximized');
+        popup.setAttribute("style", popup.dataset.prevStyle);
+        popup.classList.remove("maximized");
       }
     }
 
     // Attach handlers to all popup window buttons after DOM is loaded
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.window.popup').forEach(popup => {
-    const controls = popup.querySelectorAll('.title-bar-controls button');
-    if (controls.length === 3) {
-      controls[0].onclick = function() { minimizeWindow(this); };
-      controls[1].onclick = function() { maximizeWindow(this); };
-      // controls[2] is close, already set inline with closeWindow('popupId')
-    }
-  });
-});
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".window.popup").forEach((popup) => {
+        const controls = popup.querySelectorAll(".title-bar-controls button");
+        if (controls.length === 3) {
+          controls[0].onclick = function () {
+            minimizeWindow(this);
+          };
+          controls[1].onclick = function () {
+            maximizeWindow(this);
+          };
+          // controls[2] is close, already set inline with closeWindow('popupId')
+        }
+      });
+    });
   </script>
 </html>
