@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Article</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="window popup"
+      id="blogPopup"
+      style="top: 1%; left: 1%; width: 98%; height: 100%"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text" id="blogTitle">Blog Article</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="window.history.back()"></button>
+        </div>
+      </div>
+      <div class="window-body" id="blogContent">Loading...</div>
+    </div>
+
+    <script>
+      // Blog titles for display
+      const blogTitles = {
+        senseyeBlog: "SensEye AI Disease Diagnosis",
+
+
+      };
+      const params = new URLSearchParams(window.location.search);
+      const blogId = params.get("blog");
+      const blogTitle = blogTitles[blogId] || "Blog Article";
+      document.getElementById("blogTitle").textContent = blogTitle;
+      if (blogId) {
+        fetch(`blogs/${blogId}.html`)
+          .then((response) => {
+            if (!response.ok) throw new Error("Not found");
+            return response.text();
+          })
+          .then((html) => {
+            document.getElementById("blogContent").innerHTML = html;
+          })
+          .catch(() => {
+            document.getElementById("blogContent").innerHTML =
+              "<p>Sorry, this blog does not exist.</p>";
+            document.getElementById("blogTitle").textContent = "Blog Not Found";
+          });
+      } else {
+        document.getElementById("blogContent").innerHTML =
+          "<p>Sorry, this blog does not exist.</p>";
+        document.getElementById("blogTitle").textContent = "Blog Not Found";
+      }
+    </script>
+  </body>
+</html>
