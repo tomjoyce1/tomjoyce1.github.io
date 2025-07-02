@@ -312,20 +312,15 @@
       >
         <div class="title-bar">
           <div class="title-bar-text">Paint</div>
-
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
-
             <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('paintWindow')"
-              aria-label="Close"
-            ></button>
+            <button onclick="closeWindow('paintWindow')" aria-label="Close"></button>
           </div>
         </div>
         <!-- inner box -->
-        <div class="window-body">
-          <iframe src="https://jspaint.app" width="100%" height="100%"></iframe>
+        <div class="window-body" style="height: calc(100% - 32px); padding: 0;">
+          <iframe src="https://jspaint.app/?load=assets/modernIcons/PENUP_20250702_195740.png" style="width:100%;height:100%;border:none;display:block;"></iframe>
         </div>
       </div>
 
