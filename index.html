@@ -109,7 +109,10 @@
 
       <!-- start menu -->
       <div id="taskbar">
-        <button class="start-button" onclick="openWindow('taskBarLinks')">
+        <button
+          class="start-button"
+          onclick="isWindowOpen('taskBarLinks') ? closeWindow('taskBarLinks') : openWindow('taskBarLinks')"
+        >
           <img src="./assets/w95.png" style="height: 26px" />
         </button>
       </div>
@@ -420,11 +423,7 @@
       <div
         id="projectsWindow"
         class="popup-animate"
-        style="
-          top: 1%;
-          left: 50%;
-          position: absolute;
-        "
+        style="top: 1%; left: 50%; position: absolute"
       ></div>
 
       <script>
@@ -499,24 +498,69 @@
       <div
         class="window popup"
         id="taskBarLinks"
-        style="display: none; position: absolute; bottom: 40px; left: 0"
+        style="
+          display: none;
+          position: fixed;
+          left: 2px;
+          bottom: 48px; /* Just above the taskbar, always at page bottom */
+          height: 100px;
+
+          padding: 0;
+          z-index: 1201;
+        "
       >
         <div class="title-bar">
-          <div class="title-bar-text">CV</div>
-
+          <div class="title-bar-text">Quick Links</div>
           <div class="title-bar-controls">
             <button onclick="closeWindow('taskBarLinks')"></button>
           </div>
         </div>
-        <div class="window-body">
-          <div>
-            <p>LinkedIn</p>
-            <img src="./assets/linklogo.png" />
-          </div>
-          <div>
-            <p>GitHub</p>
-            <img src="./assets/linklogo.png" />
-          </div>
+        <div
+          class="window-body"
+          style="
+            padding: 12px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+          "
+        >
+          <a
+            href="https://www.linkedin.com/in/thomasjoyce1/"
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              text-decoration: none;
+              color: #222;
+            "
+          >
+            <img
+              src="./assets/linklogo.png"
+              style="width: 22px; height: 22px"
+              alt="LinkedIn"
+            />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/tomjoyce1"
+            target="_blank"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              text-decoration: none;
+              color: #222;
+            "
+          >
+            <img
+              src="./assets/linklogo.png"
+              style="width: 22px; height: 22px"
+              alt="GitHub"
+            />
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
 
@@ -554,6 +598,11 @@
         popup.setAttribute("style", popup.dataset.prevStyle);
         popup.classList.remove("maximized");
       }
+    }
+
+    function isWindowOpen(id) {
+      const el = document.getElementById(id);
+      return el && el.style.display !== "none";
     }
 
     // Attach handlers to all popup window buttons after DOM is loaded

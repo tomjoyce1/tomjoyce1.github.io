@@ -1,41 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Blog Article</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
   </head>
+
   <body>
-    <div
-      class="window popup"
-      id="blogPopup"
-      style="top: 1%; left: 1%; width: 98%; height: 100%"
-    >
-      <div class="title-bar">
-        <div class="title-bar-text" id="blogTitle">Blog Article</div>
-        <div class="title-bar-controls">
-          <button aria-label="Close" onclick="window.history.back()"></button>
-        </div>
-      </div>
+    <div id="blogPopup" class="blog-popup">
+      <h1 class="blog-heading" id="blogTitle">Blog Article</h1>
+      <button aria-label="Close" onclick="window.history.back()"></button>
       <div class="window-body" id="blogContent">Loading...</div>
     </div>
-
+    <!-- js -->
     <script>
       // Blog titles for display
       const blogTitles = {
         senseyeBlog: "SensEye AI Disease Diagnosis",
-
-
       };
       const params = new URLSearchParams(window.location.search);
       const blogId = params.get("blog");
@@ -61,5 +42,31 @@
         document.getElementById("blogTitle").textContent = "Blog Not Found";
       }
     </script>
+    <style>
+      .blog-popup {
+        background: #e0e0e0;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 32px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .blog-heading {
+        margin-bottom: 24px;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        color: #222;
+      }
+      @media (max-width: 800px) {
+        .blog-popup {
+          max-width: 98vw;
+          padding: 16px 4vw;
+        }
+      }
+    </style>
   </body>
 </html>

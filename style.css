@@ -1,5 +1,10 @@
-
-
+#taskBarLinks .window-body a:hover {
+          background: #e0e0e0;
+          border-radius: 6px;
+}
+#taskBarLinks{
+  transition:height 0.3s ease;
+}
 
 
 
