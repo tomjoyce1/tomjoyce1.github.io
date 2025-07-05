@@ -1,0 +1,90 @@
+body {
+  /* background-color: #515053; */
+  background: linear-gradient(
+    0deg,
+    rgb(212, 211, 213) 0%,
+    rgb(141, 140, 140) 100%
+  );
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.body-grid-overlay {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.window,
+.window-body,
+header,
+main {
+  position: relative;
+  z-index: 2;
+}
+.window {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.window-body {
+  padding: 32px 24px;
+}
+
+h1 {
+  font-family: "Fixedsys", "Consolas", "Courier New", monospace;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #222;
+}
+h2 {
+  font-family: "Fixedsys", "Consolas", "Courier New", monospace;
+
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 18px 0;
+}
+.meta {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 18px 0 8px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+figcaption {
+  font-size: 0.98rem;
+  color: #888;
+  margin-bottom: 14px;
+  text-align: left;
+}
+.credit {
+  color: #aaa;
+  font-size: 0.92em;
+}
+p {
+  font-family: "Fixedsys", "Consolas", "Courier New", monospace;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #222;
+}
+@media (max-width: 800px) {
+  .window {
+    margin: 12px;
+  }
+  .window-body {
+    padding: 12px 2vw;
+  }
+}

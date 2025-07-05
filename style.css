@@ -1,14 +1,9 @@
 #taskBarLinks .window-body a:hover {
-          background: #e0e0e0;
+  background: #e0e0e0;
 }
-#taskBarLinks{
-  transition:height 0.3s ease;
+#taskBarLinks {
+  transition: height 0.3s ease;
 }
-
-
-
-
-
 
 .warning {
   font-size: 20px;
@@ -83,7 +78,7 @@
 
 .popup {
   position: absolute;
- 
+
   width: 500px;
   z-index: 10;
   cursor: move;
@@ -127,9 +122,6 @@
   padding: 20px;
   width: 300px;
 }
-
-
-
 
 .icon {
   text-decoration: none;
@@ -186,4 +178,18 @@
   height: 20px;
   vertical-align: middle;
   margin-right: 4px;
+}
+
+@media (max-width: 600px) {
+  .popup {
+    position: fixed;
+    width: 98vw;
+    left: 1vw !important;
+    right: 1vw !important;
+    min-width: unset;
+    max-width: unset;
+    top: 10px !important;
+    bottom: auto !important;
+    display: block !important;
+  }
 }
