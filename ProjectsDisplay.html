@@ -45,13 +45,13 @@
             <div class="video-info">
               <div class="video-title">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                   class="lang-icon"
                 />
-                Python for Data Science
+                DevOps One-stop Shop Portal
               </div>
               <div class="video-desc">
-                Intro to pandas, NumPy, and Jupyter Notebooks.
+                BD Internship: React Frontend, FastAPI Backend
               </div>
             </div>
           </div>
@@ -207,11 +207,16 @@
     // Toggle maximized state
     if (!popup.classList.contains("maximized")) {
       popup.dataset.prevStyle = popup.getAttribute("style") || "";
+      popup.style.position = "absolute";
       popup.style.top = "0";
+      popup.style.right = "0";
+      popup.style.bottom = "0";
+
       popup.style.left = "0";
       popup.style.width = "100vw";
       popup.style.height = "100vh";
       popup.style.margin = "0";
+      popup.style.zIndex = "9999";
       popup.classList.add("maximized");
     } else {
       // Restore previous style
