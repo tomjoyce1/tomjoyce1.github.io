@@ -4,7 +4,7 @@
 
 ![Diagram](images/blogs/bdInternshipBlog/bdrci.jpg)
 
-This was my 1st internship as part of Immersive Software Engineering and I worked with BD on a full stack platform for developer tools and db monitoring.<br><br>
+This was my 1st internship as part of Immersive Software Engineering and I worked with [BD](https://bd.com) on a full stack platform for developer tools and db monitoring.<br><br>
 
 **Reducing Tool Sprawl**
 
