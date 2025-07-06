@@ -1,8 +1,7 @@
 # Machine Learning Model to Detect Anomalies
 
 ## Python, Java
-
-![Diagram](images\blogs\awsInternshipBlog\cloudwatchExample.jpg)
+![Diagram](images/blogs/awsInternshipBlog/cloudwatchExample.jpg)
 _[Source](https://aws.amazon.com/blogs/apn/simplify-workload-monitoring-using-amazon-cloudwatch-anomaly-detection/) AWS Cloudwatch Anomaly Detection_ <br><br>
 
 My 2nd internship as part of Immersive Software Engineering was with [AWS](https://www.aws.amazon.com) where I worked on the CloudWatch Anomaly Detection team.

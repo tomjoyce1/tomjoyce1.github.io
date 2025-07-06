@@ -23,7 +23,8 @@
           <div class="window video-card">
             <img
               class="thumb"
-              src="./images/senseyetest.jpg"
+       
+              src="./images/blogs/senseyeBlog/senseyetest.jpg"
               alt="React video"
             />
             <div class="video-info">
@@ -161,30 +162,24 @@
     if (!popup) return;
     popup.style.display = "none";
   }
-
-  function maximizeWindow(button) {
-    const popup = button.closest(".window.popup");
-    if (!popup) return;
-    // Toggle maximized state
-    if (!popup.classList.contains("maximized")) {
-      popup.dataset.prevStyle = popup.getAttribute("style") || "";
-      popup.style.position = "absolute";
-      popup.style.top = "0";
-      popup.style.right = "0";
-      popup.style.bottom = "0";
-
-      popup.style.left = "0";
-      popup.style.width = "100vw";
-      popup.style.height = "100vh";
-      popup.style.margin = "0";
-      popup.style.zIndex = "9999";
-      popup.classList.add("maximized");
-    } else {
-      // Restore previous style
-      popup.setAttribute("style", popup.dataset.prevStyle);
-      popup.classList.remove("maximized");
-    }
+function maximizeWindow(button) {
+  const popup = button.closest(".window.popup");
+  if (!popup) return;
+  // Toggle maximized state
+  if (!popup.classList.contains("maximized")) {
+    popup.dataset.prevStyle = popup.getAttribute("style") || "";
+    popup.style.top = "0";
+    popup.style.left = "0";
+    popup.style.width = "100vw";
+    popup.style.height = "100vh";
+    popup.style.margin = "0";
+    popup.classList.add("maximized");
+  } else {
+    // Restore previous style
+    popup.setAttribute("style", popup.dataset.prevStyle);
+    popup.classList.remove("maximized");
   }
+}
 
   function closeWindow(id) {
     const popup = document.getElementById(id);

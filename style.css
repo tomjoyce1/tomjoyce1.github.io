@@ -5,6 +5,17 @@
   transition: height 0.3s ease;
 }
 
+.maximized {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
 .warning {
   font-size: 20px;
   font-weight: bold;

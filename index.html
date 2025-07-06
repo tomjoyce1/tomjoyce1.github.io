@@ -420,11 +420,13 @@
 
       <!-- proj popup -->
 
-      <div
-        id="projectsWindow"
-        class="popup-animate"
-        style="top: 1%; left: 50%; position: absolute"
-      ></div>
+<!-- proj popup -->
+<div
+  id="projectsWindow"
+  class="popup-animate"
+        style="top: 0%; left: 0%; position: absolute"
+
+></div>
 
       <script>
         fetch("ProjectsDisplay.html")
@@ -581,24 +583,25 @@
       popup.style.display = "none";
     }
 
-    function maximizeWindow(button) {
-      const popup = button.closest(".window.popup");
-      if (!popup) return;
-      // Toggle maximized state
-      if (!popup.classList.contains("maximized")) {
-        popup.dataset.prevStyle = popup.getAttribute("style") || "";
-        popup.style.top = "0";
-        popup.style.left = "0";
-        popup.style.width = "100vw";
-        popup.style.height = "100vh";
-        popup.style.margin = "0";
-        popup.classList.add("maximized");
-      } else {
-        // Restore previous style
-        popup.setAttribute("style", popup.dataset.prevStyle);
-        popup.classList.remove("maximized");
-      }
-    }
+function maximizeWindow(button) {
+  const popup = button.closest(".window.popup");
+  if (!popup) return;
+  // Toggle maximized state
+  if (!popup.classList.contains("maximized")) {
+    popup.dataset.prevStyle = popup.getAttribute("style") || "";
+    popup.style.top = "0";
+    popup.style.left = "0";
+    popup.style.width = "100vw";
+    popup.style.height = "100vh";
+    popup.style.margin = "0";
+    popup.style.transform = "none";
+    popup.classList.add("maximized");
+  } else {
+    // Restore previous style
+    popup.setAttribute("style", popup.dataset.prevStyle);
+    popup.classList.remove("maximized");
+  }
+}
 
     function isWindowOpen(id) {
       const el = document.getElementById(id);
