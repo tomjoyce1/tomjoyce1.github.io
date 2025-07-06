@@ -113,19 +113,9 @@
 }
 .popup#chessWindow {
   position: absolute;
-  top: 50%;
+  top: 20% !important;
   left: 50%;
   width: 430px;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-}
-
-#projectsWindow.maximized {
-  position: absolute;
-  top: 50% !important;
-  left: 50% !important;
-  width: 430px !important;
-  transform: translate(-50%, -50%);
   z-index: 1000;
 }
 
@@ -201,16 +191,8 @@
   margin-right: 4px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .popup {
-    position: fixed;
-    width: 98vw;
-    left: 1vw !important;
-    right: 1vw !important;
-    min-width: unset;
-    max-width: unset;
-    top: 10px !important;
-    bottom: auto !important;
-    display: block !important;
+    display: none !important;
   }
 }
