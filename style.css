@@ -121,6 +121,11 @@
 
 .title-bar {
   cursor: move;
+  cursor: grab;
+}
+.title-bar:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
 .window-body {
   cursor: default;
@@ -193,6 +198,6 @@
 
 @media (max-width: 768px) {
   .popup {
-    display: none !important;
+    display: none;
   }
 }

@@ -121,7 +121,7 @@
 
       <!-- about me -->
       <div
-        class="window popup popup-animate"
+        class="window popup popup-animate popup-mobile"
         id="aboutMe"
         style="
           position: absolute;
@@ -423,7 +423,7 @@
 <!-- proj popup -->
 <div
   id="projectsWindow"
-  class="popup-animate"
+  class="popup-animate popup-mobile"
         style="top: 0%; left: 0%; position: absolute"
 
 ></div>
@@ -434,12 +434,12 @@
           .then((html) => {
             document.getElementById("projectsWindow").innerHTML = html;
 
-            makePopupsDraggable();
+            // makePopupsDraggable();
           });
       </script>
 
       <!-- game -->
-      <div class="window popup" id="chessWindow2" style="display: none">
+      <div class="window popup popup-mobile" id="chessWindow2" style="display: none">
         <div class="title-bar">
           <div class="title-bar-text">Chess</div>
 
@@ -465,7 +465,7 @@
 
       <!-- paint -->
       <div
-        class="window popup popup-animate"
+        class="window popup popup-animate popup-mobile"
         id="paintWindow"
         style="
           position: absolute;

@@ -28,6 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
   window.closeWindow = closeWindow;
 
   function makePopupsDraggable() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
+      document.querySelectorAll(".popup").forEach((win) => {
+        Object.assign(win.style, {
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "100vw", // use viewport units for full width
+          height: "100vh", // use viewport units for full height
+          overflow: "auto",
+          margin: "0",
+          padding: "0",
+          zIndex: "9999",
+        });
+      });
+    }
+
     // Existing drag functionality
     document.querySelectorAll(".popup").forEach((win) => {
       const titleBar = win.querySelector(".title-bar");
@@ -56,6 +74,47 @@ document.addEventListener("DOMContentLoaded", () => {
           win.style.left = `${e.clientX - offsetX}px`;
           win.style.top = `${e.clientY - offsetY}px`;
         }
+      });
+
+      // touch event listeners
+      titleBar.addEventListener("touchstart", (e) => {
+        isDragging = true;
+
+        const initialTouchX = e.touches[0].clientX;
+        const initialTouchY = e.touches[0].clientY;
+
+        const initialPopupX = win.offsetLeft;
+        const initialPopupY = win.offsetTop;
+
+        win.dataset.initialTouchX = initialTouchX;
+        win.dataset.initialTouchY = initialTouchY;
+        win.dataset.initialPopupX = initialPopupX;
+        win.dataset.initialPopupY = initialPopupY;
+      });
+
+      titleBar.addEventListener("touchmove", (e) => {
+        if (isDragging) {
+          const currentTouchX = e.touches[0].clientX;
+          const currentTouchY = e.touches[0].clientY;
+
+          const newPopupX =
+            parseInt(win.dataset.initialPopupX) +
+            (currentTouchX - parseInt(win.dataset.initialTouchX));
+          const newPopupY =
+            parseInt(win.dataset.initialPopupY) +
+            (currentTouchY - parseInt(win.dataset.initialTouchY));
+
+          win.style.left = `${newPopupX}px`;
+          win.style.top = `${newPopupY}px`;
+        }
+      });
+
+      titleBar.addEventListener("touchend", () => {
+        isDragging = false;
+        win.removeAttribute("data-initial-touch-x");
+        win.removeAttribute("data-initial-touch-y");
+        win.removeAttribute("data-initial-popup-x");
+        win.removeAttribute("data-initial-popup-y");
       });
     });
   }
