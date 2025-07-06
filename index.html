@@ -597,6 +597,7 @@ function maximizeWindow(button) {
     popup.style.transform = "none";
     popup.classList.add("maximized");
   } else {
+        popup.style.top = "330px";
     // Restore previous style
     popup.setAttribute("style", popup.dataset.prevStyle);
     popup.classList.remove("maximized");
