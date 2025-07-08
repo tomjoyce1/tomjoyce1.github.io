@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="testPopup.css">
+    <title>CMD</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top-nav">
+            <div class="top-nav-left">
+                <div class="win-icon">C:/..</div>
+                <div class="top-nav-title">Command Prompt</div>
+            </div>
+            <div class="top-nav-right">
+                <div class="min-btn"></div>
+                <div class="max-btn"></div>
+                <div class="close-btn"></div>
+
+            </div>
+        </div>
+        <div class="screen">
+            <div class="text">
+                Microsoft Windows [Version 10.0.19042.2364]<br>(c) Microsoft Corporation. All rights
+                reserved.<br><br>C:\><span></span>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        setInterval(() => {
+            document.querySelector('.line').style.display = document.querySelector('.line').style.display == 'block' ? 'none' : 'block';
+        }, 500);
+    </script>
+</body>
+</html>

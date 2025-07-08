@@ -1,0 +1,156 @@
+:root {
+  --font-color: #ebebeb;
+  --bg-color: black;
+}
+
+.main {
+  border-radius: 6px;
+  overflow: hidden;
+  width: 700px;
+  height: 400px;
+  margin: 100px auto;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px #cfc9c9;
+
+  border: 1.5px solid #656262;
+  display: flex;
+  margin: 100px auto;
+  flex-direction: column;
+  /* position: absolute; */
+}
+
+.top-nav {
+  /* padding: 1px; */
+  background-color: #333333;
+  flex-basis: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.top-nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.win-icon {
+  width: 13px;
+  height: 11px;
+  background-color: black;
+  border: 1px solid gray;
+  margin: 0px 4px;
+  font-size: 5pt;
+
+  color: white;
+  font-weight: bold;
+  font-family: system-ui;
+}
+
+.win-icon::before {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 13px;
+  height: 2px;
+  border: 1px solid gray inset;
+  background-color: rgb(200, 200, 200);
+}
+
+.top-nav-title {
+  font-family: system-ui;
+  font-size: 9pt;
+  font-weight: 400;
+  user-select: none;
+}
+
+.top-nav-right {
+  flex-shrink: 0;
+  background-color: #333333;
+
+  height: 100%;
+  display: flex;
+}
+
+.top-nav-right > div {
+  width: 35px;
+  background-color: #333333;
+
+  transition: background-color 0.1s;
+}
+
+.top-nav-right > div:hover {
+  background-color: #3d3b3b;
+}
+.min-btn::before {
+  content: "";
+  display: block;
+  width: 9px;
+  border-bottom: 1.5px solid rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 15px;
+}
+
+.max-btn::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1.3px solid rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 10px;
+}
+
+.close-btn::before {
+  color: white;
+
+  content: "\d7";
+  display: block;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 16pt;
+  width: 15px;
+  margin: auto;
+  margin-top: 2px;
+}
+
+.close-btn:hover::before {
+  color: white;
+}
+
+.close-btn:hover {
+  background-color: rgb(231, 0, 0) !important;
+}
+
+.screen {
+  flex-grow: 1;
+  background-color: var(--bg-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: var(--font-color);
+  font-family: monospace;
+}
+
+.line {
+  color: var(--font-color);
+  display: block;
+  width: 8px;
+  border-bottom: 3px solid var(--font-color);
+  position: relative;
+  top: -4px;
+  left: 30px;
+  font-weight: bold;
+}
+
+.text {
+  height: 10000px;
+}
+
+.screen::selection,
+.text::selection {
+  color: var(--bg-color);
+  background: var(--font-color);
+}
