@@ -80,12 +80,13 @@ function maximizeWindow(button) {
 
 
   <!-- start cmd -->
-
-  <title>CMD</title>
+ 
 </head>
 
 <body>
-  <div class="popup" id="cmd">
+  <div class="popup" style="  width: 700px;
+  height: 400px;"
+  id="cmd">
     <div class="title-bar">
       <div class="title-bar-left">
         <img
@@ -115,10 +116,117 @@ function maximizeWindow(button) {
     </div>
   </div>
 
-  <!-- end cmd -->
+  <!-- end cmd -
+   
+  <!-- start chess-> -->
 
-  
-    <!-- navbar -->
+
+   <div class="popup" id="chessPopup">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <img
+          src="assets\terminalicon.png"
+          alt="Terminal"
+          style="
+            width: 14px;
+            height: 14px;
+            padding-left: 7px;
+            padding-right: 6px;
+          "
+        />
+        <div class="title-bar-title">Chess TV</div>
+      </div>
+      <div class="title-bar-right">
+        <div class="min-btn" onclick="closeWindow('chessPopup')"></div>
+        <div class="max-btn" onclick="maximizeWindow(this)"></div>
+        <div class="close-btn" onclick="closeWindow('chessPopup')"></div>
+      </div>
+    </div>
+    <div class="screen">
+<iframe src="https://lichess.org/tv/frame?theme=brown&bg=dark" style="width: 400px; aspect-ratio: 10/11;" allowtransparency="true" frameborder="0"></iframe>
+   
+    </div>
+  </div>
+<!-- end chess -->
+
+<!-- start ms paint -->
+   <div class="popup" id="msPaint" style="  width: 700px;
+  height: 400px;">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <img
+          src="assets\terminalicon.png"
+          alt="Terminal"
+          style="
+            width: 14px;
+            height: 14px;
+            padding-left: 7px;
+            padding-right: 6px;
+          "
+        />
+        <div class="title-bar-title">Paint</div>
+      </div>
+      <div class="title-bar-right">
+        <div class="min-btn" onclick="closeWindow('msPaint')"></div>
+        <div class="max-btn" onclick="maximizeWindow(this)"></div>
+        <div class="close-btn" onclick="closeWindow('msPaint')"></div>
+      </div>
+    </div>
+    <div class="screen">
+ 
+  <iframe
+    src="https://jspaint.app"
+    width="100%"
+    height="100%"
+    style="border: 0;"
+    loading="lazy"
+    title="MS Paint Clone"
+  ></iframe>
+</div>
+    </div>
+  </div>
+
+<!-- end ms paint -->
+
+
+<!-- start about me -->
+   <div class="popup" id="msPaint" style="  width: 700px;
+  height: 400px;">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <img
+          src="assets\terminalicon.png"
+          alt="Terminal"
+          style="
+            width: 14px;
+            height: 14px;
+            padding-left: 7px;
+            padding-right: 6px;
+          "
+        />
+        <div class="title-bar-title">Paint</div>
+      </div>
+      <div class="title-bar-right">
+        <div class="min-btn" onclick="closeWindow('msPaint')"></div>
+        <div class="max-btn" onclick="maximizeWindow(this)"></div>
+        <div class="close-btn" onclick="closeWindow('msPaint')"></div>
+      </div>
+    </div>
+    <div class="neutral-screen">
+ 
+            • I’m studying Immersive Software Engineering<br />
+            • I worked on Anomaly Detection ML models at
+            <b>Amazon Web Services </b>, generative AI at
+            <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.
+            <br />
+            • Undisputed ISE Chess Champ.
+</div>
+    </div>
+  </div>
+
+
+<!-- end about me -->
+<!-- navbar -->
     <nav>
       <div id="nav-container">
         <div id="first-container">
