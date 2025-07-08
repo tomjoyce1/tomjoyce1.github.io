@@ -28,6 +28,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+  <link rel="stylesheet" href="testPopup.css" />
+  <script src="script.js" defer></script>
     <script type="text/javascript" src="./modernScript.js" defer></script>
   </head>
 
@@ -37,6 +39,37 @@
         document.body.style.backgroundImage = "url('./images/1dark.jpg')";
       }, 2000);
     });
+
+    setInterval(() => {
+      document.querySelector(".line").style.display =
+        document.querySelector(".line").style.display == "block"
+          ? "none"
+          : "block";
+    }, 500);
+
+function minimizeWindow(button) {
+  const window = button.closest(".title-bar").parentNode;
+ 
+}
+function maximizeWindow(button) {
+  const popup = button.closest(".title-bar").parentNode;
+
+  popup.style.position="absolute";
+  popup.style.top="0";
+  popup.style.left="0";
+
+  // maximize the window
+  popup.style.height = "100vh";
+  popup.style.width = "100vw";
+}
+ 
+
+  function closeWindow(id) {
+    const popup = document.getElementById(id);
+    if (popup) popup.style.display = "none";
+  }
+
+
   </script>
   <body>
     <style>
@@ -44,8 +77,48 @@
         background: #000;
       }
     </style>
-    <!-- navbar -->
 
+
+  <!-- start cmd -->
+
+  <title>CMD</title>
+</head>
+
+<body>
+  <div class="popup" id="cmd">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <img
+          src="assets\terminalicon.png"
+          alt="Terminal"
+          style="
+            width: 14px;
+            height: 14px;
+            padding-left: 7px;
+            padding-right: 6px;
+          "
+        />
+        <div class="title-bar-title">Command Prompt</div>
+      </div>
+      <div class="title-bar-right">
+        <div class="min-btn" onclick="closeWindow('cmd')"></div>
+        <div class="max-btn" onclick="maximizeWindow(this)"></div>
+        <div class="close-btn" onclick="closeWindow('cmd')"></div>
+      </div>
+    </div>
+    <div class="screen">
+      <div class="text">
+        Microsoft Windows [Version 10.0.26100.4349]<br />(c) Microsoft
+        Corporation. All rights reserved.<br /><br />C:\><span></span>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end cmd -->
+
+  
+    <!-- navbar -->
     <nav>
       <div id="nav-container">
         <div id="first-container">
@@ -656,6 +729,7 @@
           <div style="--i: 5"></div>
         </div>
       </section>
+
       <div class="windows-tab">
         <div class="tab-content">
           <div class="topnavbar-tab">

@@ -3,14 +3,17 @@
   --bg-color: black;
 }
 
-.main {
+.popup {
+  position: absolute;
+  top: 200px;
+  left: 200px;
   border-radius: 6px;
   overflow: hidden;
   width: 700px;
   height: 400px;
   margin: 100px auto;
   box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px #cfc9c9;
+  box-shadow: 0px 0px 20px 0px #000000;
 
   border: 1.5px solid #656262;
   display: flex;
@@ -19,7 +22,13 @@
   /* position: absolute; */
 }
 
-.top-nav {
+.title-bar:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+.title-bar {
+  cursor: move;
+  cursor: grab;
   /* padding: 1px; */
   background-color: #333333;
   flex-basis: 30px;
@@ -29,44 +38,22 @@
   flex-shrink: 0;
 }
 
-.top-nav-left {
+.title-bar-left {
   flex: 1;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.win-icon {
-  width: 13px;
-  height: 11px;
-  background-color: black;
-  border: 1px solid gray;
-  margin: 0px 4px;
-  font-size: 5pt;
-
-  color: white;
-  font-weight: bold;
-  font-family: system-ui;
-}
-
-.win-icon::before {
-  content: "";
-  display: block;
-  margin: auto;
-  width: 13px;
-  height: 2px;
-  border: 1px solid gray inset;
-  background-color: rgb(200, 200, 200);
-}
-
-.top-nav-title {
+.title-bar-title {
   font-family: system-ui;
   font-size: 9pt;
-  font-weight: 400;
+  font-weight: 500;
+  color: white;
   user-select: none;
 }
 
-.top-nav-right {
+.title-bar-right {
   flex-shrink: 0;
   background-color: #333333;
 
@@ -74,14 +61,14 @@
   display: flex;
 }
 
-.top-nav-right > div {
+.title-bar-right > div {
   width: 35px;
   background-color: #333333;
 
   transition: background-color 0.1s;
 }
 
-.top-nav-right > div:hover {
+.title-bar-right > div:hover {
   background-color: #3d3b3b;
 }
 .min-btn::before {
@@ -100,7 +87,7 @@
   height: 6px;
   border: 1.3px solid rgb(255, 255, 255);
   margin: auto;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .close-btn::before {
@@ -108,10 +95,10 @@
 
   content: "\d7";
   display: block;
-
+font-weight:100;
   align-items: center;
   justify-content: center;
-  font-size: 16pt;
+  font-size: 15pt;
   width: 15px;
   margin: auto;
   margin-top: 2px;
@@ -133,7 +120,6 @@
   color: var(--font-color);
   font-family: monospace;
 }
-
 .line {
   color: var(--font-color);
   display: block;
@@ -146,6 +132,8 @@
 }
 
 .text {
+  padding: 7px;
+  font-size: 14px;
   height: 10000px;
 }
 
