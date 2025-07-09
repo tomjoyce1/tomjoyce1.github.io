@@ -558,14 +558,30 @@
               </svg>
             </div>
             <!-- battery -->
-            <div title="Batteria Scarica">
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="battery-quarter"
-                class="svg-inline--fa fa-battery-quarter" role="img" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512">
-                <path fill="currentColor"
-                  d="M192 192H96v128h96V192zM544 192V160c0-35.35-28.65-64-64-64H64C28.65 96 0 124.7 0 160v192c0 35.35 28.65 64 64 64h416c35.35 0 64-28.65 64-64v-32c17.67 0 32-14.33 32-32V224C576 206.3 561.7 192 544 192zM480 352H64V160h416V352z">
-                </path>
+            <div title="Battery Status: 50% remaining">
+
+
+              <svg id="battery-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 16"
+                fill="white">
+                
+                <!-- Battery outer shell -->
+                <rect x="0.5" y="3" width="28" height="16" rx="2" ry="2" stroke="white" stroke-width="1.5"
+                  fill="none" />
+
+                <!-- Battery terminal -->
+                <rect x="29" y="7" width="2.75" height="7" rx="1" fill="white" />
+
+                <!-- Fill level (51%) -->
+                <rect id="battery-fill" x="2" y="6" width="14" height="10" rx="1" fill="white" />
               </svg>
+
+
+
+
+
+
+
+
             </div>
           </div>
           <div id="sistema-data">
@@ -924,27 +940,7 @@
         <source src="./images/video-1dark.mp4" type="video/mp4" />
       </video>
 
-      <section id="not-mobile-friendly">
-        <div id="titolo-errore">Dispositivo NON Sopportato.</div>
-
-        <div id="dettagli-errore">
-          <!-- spiegazione iniziale -->
-          <div>
-            <span>Apri da PC a Schermo Intero "<u><kbd>F11</kbd></u>"</span>,
-            <span>oppure usa "<u><kbd>CTRL</kbd> <kbd>-</kbd></u>" per zoom out</span>
-          </div>
-          <!-- errore in width -->
-          <div id="width-errore">
-            <span id="width-spiegazione">width: small</span>
-            <span id="width-attuale">undefined.</span>
-          </div>
-          <!-- errore in height -->
-          <div id="height-errore">
-            <span id="height-spiegazione">height: small</span>
-            <span id="height-attuale">undefined.</span>
-          </div>
-        </div>
-      </section>
+      
       <section id="spegni-section" class="">
         <div>
           <div style="--i: 1"></div>
