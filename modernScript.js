@@ -4,8 +4,8 @@ let startBtn = document.querySelector("#windows-div");
 let widgetContainer = document.querySelector("#widget-section");
 let widgetBtn = document.querySelector("#widget-div");
 
-let spegniContainer = document.querySelector("#spegni-section");
-let spegniBtn = document.querySelector(".spegni-pc-start-section");
+let shutdownContainer = document.querySelector("#spegni-section");
+let shutdownBtn = document.querySelector(".spegni-pc-start-section");
 
 let paddingContainer = document.querySelector(".padding-start");
 let searchBtn = document.querySelector("#search-div");
@@ -15,21 +15,21 @@ let footerStartContainer = document.querySelector("#footer-start-section");
 
 let windowsTab = document.querySelector(".windows-tab");
 
-let topPartTab = document.querySelector(".topnavbar-tab");
+let topTabBar = document.querySelector(".topnavbar-tab");
 
 let closeBtn = document.querySelector("#close-icon");
-let MaxBtn = document.querySelector("#max-icon");
+let maxBtn = document.querySelector("#max-icon");
 let minBtn = document.querySelector("#min-icon");
 
 let heightTab = document.querySelector(".coming-soon-tab");
 
-let appIcon = document.querySelectorAll(".app-icon");
-let nomeTab = document.querySelector(".nome-tab");
+let appIcons = document.querySelectorAll(".app-icon");
+let tabName = document.querySelector(".nome-tab");
 let tabImage = document.querySelector("#tab-image");
-let spanComingSoon = document.querySelector(".coming-soon-span");
+let comingSoonSpan = document.querySelector(".coming-soon-span");
 
 let nav = document.querySelector("nav");
-let iconNav = document.querySelector("#first-container");
+let navIconContainer = document.querySelector("#first-container");
 
 let notifBtns = document.querySelector("#second-container");
 let notifContainer = document.querySelector("#notification-section");
@@ -47,15 +47,15 @@ let firstPositionY;
 let lastPositionX;
 let lastPositionY;
 
-// from bottom to top WINDOWS START animation
+// WINDOWS START animation from bottom to top
 startBtn.addEventListener("click", function () {
   searchContainer.style.display = "none";
   paddingContainer.style.display = "grid";
   footerStartContainer.style.display = "flex";
-  openOneWinCloseOther();
+  openOneWindowCloseOther();
 });
 
-// from bottom to top WINDOWS START animation
+// WIDGET animation from bottom to top
 widgetBtn.addEventListener("click", function () {
   if (startContainer.classList.contains("on-visible-start")) {
     startContainer.classList.toggle("on-visible-start");
@@ -65,42 +65,42 @@ widgetBtn.addEventListener("click", function () {
   }
 });
 
-// turn off computer (graficamente e virtualmente)
-spegniBtn.addEventListener("click", function () {
-  spegniContainer.classList.toggle("pc-off");
+// Turn off the computer (graphically and virtually)
+shutdownBtn.addEventListener("click", function () {
+  shutdownContainer.classList.toggle("pc-off");
   alert(
-    "adesso, windows 11 (web edition) \nsi spegnerà virtualmente, \n \nper ritornare alla homepage, \ncliccare qualsiasi punto sullo schermo!"
+    "Now, Windows 11 (web edition) \nwill shut down virtually, \n\nTo return to the homepage, \nclick anywhere on the screen!"
   );
 });
 
-spegniContainer.addEventListener("click", function () {
-  spegniContainer.classList.toggle("pc-off");
+shutdownContainer.addEventListener("click", function () {
+  shutdownContainer.classList.toggle("pc-off");
 });
 
-// SEARCH function in beta
+// SEARCH function (beta)
 searchBtn.addEventListener("click", function () {
   paddingContainer.style.display = "none";
   footerStartContainer.style.display = "none";
   searchContainer.style.display = "grid";
-  openOneWinCloseOther();
+  openOneWindowCloseOther();
 });
 
-// windows moving tab
-topPartTab.addEventListener("mousedown", function () {
+// Move the window tab
+topTabBar.addEventListener("mousedown", function () {
   isTopBarClicked = true;
   console.log("mousedown");
   document.onmousemove = function (e) {
     var x = e.clientX;
     var y = e.clientY;
-    var MaxWidth = document.documentElement.scrollWidth;
-    var MaxX = MaxWidth - windowsTab.offsetWidth;
+    var maxWidth = document.documentElement.scrollWidth;
+    var maxX = maxWidth - windowsTab.offsetWidth;
 
     if (x <= 0) {
-      leftTab();
+      moveTabLeft();
     } else if (y <= 0) {
-      topTab();
-    } else if (x >= MaxX) {
-      rightTab();
+      moveTabTop();
+    } else if (x >= maxX) {
+      moveTabRight();
     } else {
       windowsTab.style.transitionDuration = "0s";
       windowsTab.style.left = x + "px";
@@ -113,56 +113,54 @@ topPartTab.addEventListener("mousedown", function () {
   };
 });
 
-// non mouve più la tab, quando non è necessario
+// Stop moving the tab when not needed
 document.addEventListener("mouseup", function () {
   document.onmousemove = null;
 });
 
-for (let i = 0; i < appIcon.length; i++) {
-  spanComingSoon.style.display = "grid";
+for (let i = 0; i < appIcons.length; i++) {
+  comingSoonSpan.style.display = "grid";
   tabImage.style.display = "none";
-  appIcon[i].addEventListener("click", function () {
+  appIcons[i].addEventListener("click", function () {
     windowsTab.style.display = "grid";
-    spanComingSoon.style.display = "none";
+    comingSoonSpan.style.display = "none";
     tabImage.style.display = "grid";
-    let appName = appIcon[i].querySelector("span").textContent;
-    nomeTab.textContent = appName;
-    /* get the image from the app icon */
-    let appImage = appIcon[i].querySelector("img").src;
+    let appName = appIcons[i].querySelector("span").textContent;
+    tabName.textContent = appName;
+    let appImage = appIcons[i].querySelector("img").src;
     tabImage.src = appImage;
   });
 }
 
-// buttone per cancellare la tab (nascondere la tab)
+// Button to close the tab (hide the tab)
 closeBtn.addEventListener("click", function () {
   windowsTab.style.display = "none";
 });
 
-// crea un icona nella nav, e nasconde la tab
+// Create an icon in the nav and hide the tab (minimize)
 minBtn.addEventListener("click", function () {
   windowsTab.style.display = "none";
-  /*add element div with img to iconNav*/
-  let newDivNav = document.createElement("div");
-  let newImageIconNav = document.createElement("img");
-  newImageIconNav.src = tabImage.src;
-  newDivNav.appendChild(newImageIconNav);
-  iconNav.appendChild(newDivNav);
+  let newDiv = document.createElement("div");
+  let newImg = document.createElement("img");
+  newImg.src = tabImage.src;
+  newDiv.appendChild(newImg);
+  navIconContainer.appendChild(newDiv);
   console.log("MINIMIZED TAB");
 });
 
-// ingrandisce la tab a seconda delle dimensioni dello schermo
-MaxBtn.addEventListener("click", function () {
-  topTab();
+// Maximize the tab to screen size
+maxBtn.addEventListener("click", function () {
+  moveTabTop();
 });
 
-// per aprire le notifiche
+// Open notifications panel
 notifBtns.addEventListener("click", function () {
   notifContainer.classList.toggle("notification-on");
 });
 
-function leftTab() {
-  windowsTab.style.left = 0 + "px";
-  windowsTab.style.top = 0 + "px";
+function moveTabLeft() {
+  windowsTab.style.left = "0px";
+  windowsTab.style.top = "0px";
   windowsTab.style.removeProperty("right");
   windowsTab.style.removeProperty("transform");
   windowsTab.style.width = "50vw";
@@ -171,9 +169,9 @@ function leftTab() {
   console.log("LEFT TAB");
 }
 
-function topTab() {
-  windowsTab.style.left = 0 + "px";
-  windowsTab.style.top = 0 + "px";
+function moveTabTop() {
+  windowsTab.style.left = "0px";
+  windowsTab.style.top = "0px";
   windowsTab.style.removeProperty("right");
   windowsTab.style.removeProperty("transform");
   windowsTab.style.width = "100vw";
@@ -182,10 +180,10 @@ function topTab() {
   console.log("TOP TAB");
 }
 
-function rightTab() {
+function moveTabRight() {
   windowsTab.style.transform = "translateX(99%)";
-  windowsTab.style.left = 0 + "px";
-  windowsTab.style.top = 0 + "px";
+  windowsTab.style.left = "0px";
+  windowsTab.style.top = "0px";
   windowsTab.style.removeProperty("right");
   windowsTab.style.width = "50vw";
   windowsTab.style.height = "calc(100vh - var(--nav-height))";
@@ -193,8 +191,8 @@ function rightTab() {
   console.log("RIGHT TAB");
 }
 
-// funzione per aprire una finestra e chiuderne l'altra (se c'è)
-function openOneWinCloseOther() {
+// Open one window and close the other if needed
+function openOneWindowCloseOther() {
   if (widgetContainer.classList.contains("on-visible-widget")) {
     widgetContainer.classList.toggle("on-visible-widget");
     startContainer.classList.toggle("on-visible-start");
@@ -203,101 +201,88 @@ function openOneWinCloseOther() {
   }
 }
 
-// crea un selezionatore provissorio a seconda della tua posizione del mouse
-
-// ottenere l'ora corrente
+// Get the current time
 function getDate() {
-  let DataAttuale = new Date();
+  let currentDate = new Date();
 
-  let giorno = DataAttuale.getDate();
-  let mese = DataAttuale.getMonth() + 1; // mese parte da 0
-  let anno = DataAttuale.getFullYear();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1;
+  let year = currentDate.getFullYear();
 
-  let ora = DataAttuale.getHours();
-  let minuti = DataAttuale.getMinutes();
+  let hour = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
 
-  let orarioContainer = document.getElementById("orario-data");
-  let calendarioContainer = document.getElementById("calendario-data");
+  let timeContainer = document.getElementById("orario-data");
+  let calendarContainer = document.getElementById("calendario-data");
 
-  // se l'ora/minuti è meno di 10, allora si aggiunge uno 0 prima
-  if (ora < 10 && minuti < 10) {
-    orarioContainer.innerHTML = "0" + ora + ":" + "0" + minuti;
-  } else if (ora < 10) {
-    orarioContainer.innerHTML = "0" + ora + ":" + minuti;
-  } else if (minuti < 10) {
-    orarioContainer.innerHTML = ora + ":" + "0" + minuti;
+  if (hour < 10 && minutes < 10) {
+    timeContainer.innerHTML = "0" + hour + ":" + "0" + minutes;
+  } else if (hour < 10) {
+    timeContainer.innerHTML = "0" + hour + ":" + minutes;
+  } else if (minutes < 10) {
+    timeContainer.innerHTML = hour + ":" + "0" + minutes;
   } else {
-    orarioContainer.innerHTML = ora + ":" + minuti;
+    timeContainer.innerHTML = hour + ":" + minutes;
   }
 
-  // se il giorno/mese è meno di 10, allora si aggiunge uno 0 prima
-  if (giorno < 10 && mese < 10) {
-    calendarioContainer.innerHTML =
-      "0" + giorno + "/" + "0" + mese + "/" + anno;
-  } else if (giorno < 10) {
-    calendarioContainer.innerHTML = "0" + giorno + "/" + mese + "/" + anno;
-  } else if (mese < 10) {
-    calendarioContainer.innerHTML = giorno + "/" + "0" + mese + "/" + anno;
+  if (day < 10 && month < 10) {
+    calendarContainer.innerHTML = "0" + day + "/" + "0" + month + "/" + year;
+  } else if (day < 10) {
+    calendarContainer.innerHTML = "0" + day + "/" + month + "/" + year;
+  } else if (month < 10) {
+    calendarContainer.innerHTML = day + "/" + "0" + month + "/" + year;
   } else {
-    calendarioContainer.innerHTML = giorno + "/" + mese + "/" + anno;
+    calendarContainer.innerHTML = day + "/" + month + "/" + year;
   }
 
   document.getElementById("sistema-data").title =
-    orarioContainer.innerHTML + "  " + calendarioContainer.innerHTML;
+    timeContainer.innerHTML + "  " + calendarContainer.innerHTML;
 
-  // ogni minuto si aggiunge l'ora
-  // 1000 = 1 secondo... 1000 * 60 = 60000... 60000 = 1 minuto
   setTimeout(function () {
     getDate();
-  }, 60000); // 60 secondi
+  }, 60000);
 }
 
-// le funzione chiamate sono inizializzate in queste funzioni
+// Initialize functions
 dragSelectorLogic();
 getDate();
 
-function DispositivoNonSupportato() {
-  let AttualeWidthContainer = document.getElementById("width-attuale");
-  let AttualeHeightContainer = document.getElementById("height-attuale");
+function unsupportedDevice() {
+  let currentWidthContainer = document.getElementById("width-attuale");
+  let currentHeightContainer = document.getElementById("height-attuale");
 
-  let widthSpiegazione = document.getElementById("width-spiegazione");
-  let heightSpiegazione = document.getElementById("height-spiegazione");
+  let widthExplanation = document.getElementById("width-spiegazione");
+  let heightExplanation = document.getElementById("height-spiegazione");
 
-  checkSopporto();
+  checkSupport();
 
   window.addEventListener("resize", function () {
-    checkSopporto();
+    checkSupport();
   });
 
-  function checkSopporto() {
-    // se la larghezza è inferiore a 800px, allora si mostra la spiegazione
+  function checkSupport() {
     if (window.innerWidth < 800) {
-      widthSpiegazione.innerHTML =
-        "ERRORE LARGHEZZA: ti serve <b>800px</b>" +
-        "   " +
-        "per visualizzare questa pagina";
-      AttualeWidthContainer.innerHTML = window.innerWidth + "px";
-      widthSpiegazione.style.color = "rgb(255, 0, 47)";
+      widthExplanation.innerHTML =
+        "WIDTH ERROR: You need <b>800px</b>" + "   " + "to view this page";
+      currentWidthContainer.innerHTML = window.innerWidth + "px";
+      widthExplanation.style.color = "rgb(255, 0, 47)";
     } else {
-      widthSpiegazione.innerHTML = "Larghezza del tuo Schermo Giusta!";
-      AttualeWidthContainer.innerHTML = "";
-      widthSpiegazione.style.color = "rgb(0, 255, 157)";
+      widthExplanation.innerHTML = "Your screen width is correct!";
+      currentWidthContainer.innerHTML = "";
+      widthExplanation.style.color = "rgb(0, 255, 157)";
     }
 
-    // se l'altezza è inferiore a 600px, allora si mostra la spiegazione
     if (window.innerHeight < 600) {
-      heightSpiegazione.innerHTML =
-        "ERRORE ALTEZZA: ti serve <b>600px</b>" +
-        "   " +
-        "per visualizzare questa pagina";
-      AttualeHeightContainer.innerHTML = window.innerHeight + "px";
-      heightSpiegazione.style.color = "rgb(255, 0, 47)";
+      heightExplanation.innerHTML =
+        "HEIGHT ERROR: You need <b>600px</b>" + "   " + "to view this page";
+      currentHeightContainer.innerHTML = window.innerHeight + "px";
+      heightExplanation.style.color = "rgb(255, 0, 47)";
     } else {
-      heightSpiegazione.innerHTML = "Altezza del tuo Schermo Giusta!";
-      AttualeHeightContainer.innerHTML = "";
-      heightSpiegazione.style.color = "rgb(0, 255, 157)";
+      heightExplanation.innerHTML = "Your screen height is correct!";
+      currentHeightContainer.innerHTML = "";
+      heightExplanation.style.color = "rgb(0, 255, 157)";
     }
   }
 }
 
-DispositivoNonSupportato();
+unsupportedDevice();

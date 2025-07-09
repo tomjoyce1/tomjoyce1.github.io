@@ -23,7 +23,16 @@
   document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       document.body.style.backgroundImage = "url('./images/1dark.jpg')";
-      document.body.style.backgroundSize = '100% 100%';
+      document.body.style.height = 'var(--max-height)';
+      document.body.style.width = 'var(--max-width)';
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      document.body.style.overflow = 'hidden';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundAttachment = 'fixed';
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.transitionDuration = '0.5s';
     }, 2000);
   });
 
@@ -72,7 +81,7 @@
   </head>
 
   <body>
-    <div class="popup" style="  width: 700px;
+    <div class="popup" style=" display:none; width: 700px;
   height: 400px;" id="cmd">
       <div class="title-bar">
         <div class="title-bar-left">
@@ -629,12 +638,24 @@
         <img src="assets\modernIcons\paint.webp" alt="CV" />
         <span>Paint</span>
       </div>
+
+
+
       <!-- icon 9 -->
       <div class="icon" onclick="openWindow('blogProjects')">
         <img src="assets\modernIcons\blog.png" alt="CV" />
 
         <span>Blogs</span>
       </div>
+      <!-- icon 10 -->
+      <div class="icon" onclick="openWindow('cmd')">
+        <img src="assets\terminalicon.png" alt="CV" />
+
+        <span>Terminal</span>
+      </div>
+    </div>
+
+
     </div>
 
     <!-- start section, che si apre con il buttone windows tramite javascript -->
