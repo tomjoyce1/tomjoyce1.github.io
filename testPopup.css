@@ -133,6 +133,8 @@ font-weight:100;
 
 .screen {
   flex-grow: 1;
+    height: 100%;
+
   background-color: var(--bg-color);
   overflow-y: scroll;
   overflow-x: hidden;
