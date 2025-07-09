@@ -151,6 +151,8 @@ nav #nav-container {
 }
 
 #second-container {
+  position:absolute;
+  right:4px;
   gap: 0rem !important;
 }
 
@@ -165,7 +167,9 @@ nav #nav-container {
 }
 
 #first-container {
-  margin: auto;
+  position:absolute;
+  left:50%;
+   margin: auto;
 }
 
 #second-container #sistema-info div {
