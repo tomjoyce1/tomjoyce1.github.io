@@ -464,24 +464,25 @@ label input {
   align-items: center;
 }
 
-.nome-utente-start-section,
+.start-section,
 .spegni-pc-start-section {
+    align-items: center;
+
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 0.5em;
   padding: 0.5em;
   transition-duration: 0.2s;
 }
 
-.nome-utente-start-section:hover,
+.start-section:hover,
 .spegni-pc-start-section:hover {
   background-color: var(--glass-white-color);
   border-radius: 0.5em;
   transition-duration: 0.5s;
 }
 
-.nome-utente-start-section svg {
+.start-section svg {
   height: 1.7em;
   width: auto;
   fill: white !important;

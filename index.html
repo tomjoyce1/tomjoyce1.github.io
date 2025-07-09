@@ -2,503 +2,372 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tomOS</title>
-    <link rel="icon" type="image/x-icon" href="./assets/computer_2.ico" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="./assets/computer.ico"
-    />
 
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tomOS</title>
+  <link rel="icon" type="image/x-icon" href="./assets/computer_2.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/computer.ico" />
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <style>
-      .popup-animate {
-        opacity: 0;
-        transform: scale(0.8);
-        transition: opacity 0.4s cubic-bezier(0.4, 2, 0.6, 1),
-          transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
-        pointer-events: none;
-      }
-      .popup-animate-in {
-        opacity: 1 !important;
-        transform: scale(1) !important;
-        pointer-events: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bg-image">
-      <!-- backdrop grid of icons -->
-      <div class="desktop-icons">
-        <!-- icon 1 -->
-        <div class="icon" onclick="openWindow('cvWindow')">
-          <a href="assets/cv.pdf" target="_blank">
-            <img src="./assets/cvresume.ico" alt="CV" />
-            <span>CV/Resume</span>
-          </a>
-        </div>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-        <!-- icon 2 linkedin -->
-        <div class="icon">
-          <a href="https://www.linkedin.com/in/thomasjoyce1/" target="_blank">
-            <img src="./assets/linkedin.ico" alt="CV" />
-            <span>LinkedIn</span>
-          </a>
-        </div>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    .popup-animate {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.4s cubic-bezier(0.4, 2, 0.6, 1),
+        transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+      pointer-events: none;
+    }
 
-        <!-- icon 3 -->
-        <div class="icon">
-          <a href="https://github.com/tomjoyce1" target="_blank">
-            <img src="./assets/github.ico" alt="Github" />
+    .popup-animate-in {
+      opacity: 1 !important;
+      transform: scale(1) !important;
+      pointer-events: auto;
+    }
+  </style>
+</head>
 
-            <span>GitHub</span>
-          </a>
-        </div>
-
-        <!-- icon 4 -->
-        <div class="icon" onclick="openWindow('projectsDirectory')">
-          <img src="./assets/projects.ico" alt="CV" />
-          <span>Projects</span>
-        </div>
-
-        <!-- icon 5 -->
-        <div class="icon" onclick="openWindow('skillsPopup')">
-          <img src="./assets/cd_drive.ico" alt="CV" />
-          <span>Skills/Experience</span>
-        </div>
-
-        <!-- icon 6 -->
-        <div class="icon" onclick="openWindow('contactPopup')">
-          <img src="./assets/contact.ico" alt="CV" />
-          <span>Contact</span>
-        </div>
-
-        <!-- icon 7 -->
-        <div class="icon" onclick="openWindow('aboutMe')">
-          <img src="./assets/aboutme.ico" alt="CV" />
-          <span>About me</span>
-        </div>
-
-        <!-- icon 8 -->
-        <div class="icon" onclick="openWindow('chessWindow2')">
-          <img src="./assets/chess.png" alt="CV" />
-          <span>Chess</span>
-        </div>
-
-        <!-- icon 8 -->
-        <div class="icon" onclick="openWindow('paintWindow')">
-          <img src="./assets/paint.ico" alt="CV" />
-          <span>Paint</span>
-        </div>
-        <!-- icon 9 -->
-        <div class="icon" onclick="openWindow('projectsDirectory')">
-          <img src="./assets/blogs.ico" alt="CV" />
-
-          <span>Blogs</span>
-        </div>
+<body>
+  <div class="bg-image">
+    <!-- backdrop grid of icons -->
+    <div class="desktop-icons">
+      <!-- icon 1 -->
+      <div class="icon" onclick="openWindow('cvWindow')">
+        <a href="assets/cv.pdf" target="_blank">
+          <img src="./assets/cvresume.ico" alt="CV" />
+          <span>CV/Resume</span>
+        </a>
       </div>
 
-      <!-- start menu -->
-      <div id="taskbar">
-        <button
-          class="start-button"
-          onclick="isWindowOpen('taskBarLinks') ? closeWindow('taskBarLinks') : openWindow('taskBarLinks')"
-        >
-          <img src="./assets/w95.png" style="height: 26px" />
-        </button>
+      <!-- icon 2 linkedin -->
+      <div class="icon">
+        <a href="https://www.linkedin.com/in/thomasjoyce1/" target="_blank">
+          <img src="./assets/linkedin.ico" alt="CV" />
+          <span>LinkedIn</span>
+        </a>
       </div>
 
-      <!-- WINDOW windows -->
+      <!-- icon 3 -->
+      <div class="icon">
+        <a href="https://github.com/tomjoyce1" target="_blank">
+          <img src="./assets/github.ico" alt="Github" />
 
-      <!-- about me -->
-      <div
-        class="window popup popup-animate popup-mobile"
-        id="aboutMe"
-        style="
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <!-- icon 4 -->
+      <div class="icon" onclick="openWindow('projectsDirectory')">
+        <img src="./assets/projects.ico" alt="CV" />
+        <span>Projects</span>
+      </div>
+
+      <!-- icon 5 -->
+      <div class="icon" onclick="openWindow('skillsPopup')">
+        <img src="./assets/cd_drive.ico" alt="CV" />
+        <span>Skills/Experience</span>
+      </div>
+
+      <!-- icon 6 -->
+      <div class="icon" onclick="openWindow('contactPopup')">
+        <img src="./assets/contact.ico" alt="CV" />
+        <span>Contact</span>
+      </div>
+
+      <!-- icon 7 -->
+      <div class="icon" onclick="openWindow('aboutMe')">
+        <img src="./assets/aboutme.ico" alt="CV" />
+        <span>About me</span>
+      </div>
+
+      <!-- icon 8 -->
+      <div class="icon" onclick="openWindow('chessWindow2')">
+        <img src="./assets/chess.png" alt="CV" />
+        <span>Chess</span>
+      </div>
+
+      <!-- icon 8 -->
+      <div class="icon" onclick="openWindow('paintWindow')">
+        <img src="./assets/paint.ico" alt="CV" />
+        <span>Paint</span>
+      </div>
+      <!-- icon 9 -->
+      <div class="icon" onclick="openWindow('projectsDirectory')">
+        <img src="./assets/blogs.ico" alt="CV" />
+
+        <span>Blogs</span>
+      </div>
+    </div>
+
+    <!-- start menu -->
+    <div id="taskbar">
+      <button class="start-button"
+        onclick="isWindowOpen('taskBarLinks') ? closeWindow('taskBarLinks') : openWindow('taskBarLinks')">
+        <img src="./assets/w95.png" style="height: 26px" />
+      </button>
+    </div>
+
+    <!-- WINDOW windows -->
+
+    <!-- about me -->
+    <div class="window popup popup-animate popup-mobile" id="aboutMe" style="
           position: absolute;
           top: 44%;
           left: 46%;
-          width: 250px;
+          width: 450px;
           z-index: 1200;
-        "
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">About Me</div>
+        ">
+      <div class="title-bar">
+        <div class="title-bar-text">About Me</div>
 
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
 
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('aboutMe')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <p>
-            • I’m studying Immersive Software Engineering<br />
-            • I worked on Anomaly Detection ML models at
-            <b>Amazon Web Services </b>, generative AI at
-            <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.
-            <br />
-            • Undisputed ISE Chess Champ.
-          </p>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('aboutMe')">OK</button>
-            <button onclick="closeWindow('aboutMe')">Cancel</button>
-          </section>
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('aboutMe')" aria-label="Close"></button>
         </div>
       </div>
+      <div class="window-body">
+        <div class="field-row" style="align-items: flex-start;">
+  <div style="margin-right: 16px;">
+    <img src="assets/tjoyce.jpg" alt="me" style="height: 170px" />
+  </div>
+  <div style="display: flex; flex-direction: column; justify-content: space-between; height: 170px;">
+    <p style="margin: 0;">
+      • I’m studying Immersive Software Engineering<br />
+      • I worked on Anomaly Detection ML models at
+      <b>Amazon Web Services</b>, generative AI at
+      <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.<br />
+      • Undisputed ISE Chess Champ.
+    </p>
+    <section class="field-row" style="justify-content: flex-end; gap: 6px; margin-top: 10px;">
+      <button onclick="closeWindow('aboutMe')">OK</button>
+      <button onclick="closeWindow('aboutMe')">Cancel</button>
+    </section>
+  </div>
+</div>
 
-      <!-- nuke -->
-      <div
-        class="window popup popup-animate"
-        id="nuke"
-        style="position: absolute; top: 312px; left: 690px; width: 250px"
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">Don't Press</div>
+     
+      </div>
+    </div>
 
-          <div class="title-bar-controls">
-            <button
-              onclick="closeWindow('nuke')"
-              aria-label="Minimize"
-            ></button>
+    <!-- nuke -->
+    <div class="window popup popup-animate" id="nuke" style="position: absolute; top: 312px; left: 690px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-text">Don't Press</div>
 
-            <button onclick="closeWindow('nuke')" aria-label="Close"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <p ><b>⚠ WARNING: </b>  Do Not Press</p>
- 
+        <div class="title-bar-controls">
+          <button onclick="closeWindow('nuke')" aria-label="Minimize"></button>
 
-          <section class="field-row" style="justify-content: flex-end">
-            <button id="warning-button" class="warning-button">⚠ Launch</button>
-            <button onclick="closeWindow('nuke')">Cancel</button>
-          </section>
+          <button onclick="closeWindow('nuke')" aria-label="Close"></button>
         </div>
       </div>
+      <div class="window-body">
+        <p><b>⚠ WARNING: </b> Do Not Press</p>
 
-      <!-- Skills/Experience popup -->
-      <div
-        class="window popup"
-        id="skillsPopup"
-        style="margin: 32px; width: 450px; display: none"
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">My Skills</div>
 
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
+        <section class="field-row" style="justify-content: flex-end">
+          <button id="warning-button" class="warning-button">⚠ Launch</button>
+          <button onclick="closeWindow('nuke')">Cancel</button>
+        </section>
+      </div>
+    </div>
 
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('skillsPopup')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body" style="max-height: 400px; overflow: scroll">
-          <p>
-            💻 <b>Machine Learning</b><br /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/MATLAB-%23be2909?style=flat-square&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/PyTorch-%23EE4C2C?style=flat-square&logo=pytorch&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/TensorFlow-%23FF6F00?style=flat-square&logo=tensorflow&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Jupyter-%23F37626?style=flat-square&logo=jupyter&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Scikit--learn-%23F7931E?style=flat-square&logo=scikit-learn&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/SciPy-%238CAAE6?style=flat-square&logo=scipy&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Python-%233776AB?style=flat-square&logo=python&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/PyG-%233C2179?style=flat-square&logo=pyg&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Pandas-%23150458?style=flat-square&logo=pandas&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/NumPy-%23013243?style=flat-square&logo=numpy&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/OpenCV-%2300485F?style=flat-square&logo=opencv&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Keras-%23D00000?style=flat-square&logo=keras&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/MLflow-%2300B3E6?style=flat-square&logo=mlflow&logoColor=white"
-            /><br />
-            <br />
-            📱 <b>Apps</b><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Android-%233DDC84?style=flat-square&logo=android&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Kotlin-%237F52FF?style=flat-square&logo=kotlin&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Firebase-%23FFCA28?style=flat-square&logo=firebase&logoColor=white"
-            /><br />
-            <br />
-            🔧 <b>Systems Programming</b><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Java-%23f89820?style=flat-square&logo=java&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/C%23-%23239120?style=flat-square&logo=c-sharp&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/C++-%2300599C?style=flat-square&logo=c%2B%2B&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Assembly-%23323330?style=flat-square&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Git-%23F05032?style=flat-square&logo=git&logoColor=white"
-            /><br />
-            <br />
-            🌐 <b>Web Development</b><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/JavaScript-%23F7DF1E?style=flat-square&logo=javascript&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/HTML5-%23E34F26?style=flat-square&logo=html5&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/CSS3-%231572B6?style=flat-square&logo=css3&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/PHP-%23777BB4?style=flat-square&logo=php&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/WordPress-%2321759B?style=flat-square&logo=wordpress&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/React-%2361DAFB?style=flat-square&logo=react&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Node.js-%33339933?style=flat-square&logo=node.js&logoColor=white"
-            /><br />
-            <br />
-            🛠️ <b>Tools & Platforms</b><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Linux-%23FCC624?style=flat-square&logo=linux&logoColor=black"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/GitHub-%23121011?style=flat-square&logo=github&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/VS%20Code-%23007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Google%20Colab-%23F9AB00?style=flat-square&logo=googlecolab&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Docker-%230db7ed?style=flat-square&logo=docker&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Heroku-%23430098?style=flat-square&logo=heroku&logoColor=white"
-            /><br />
-            <br />
-            🧠 <b>AI</b><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/OpenAI-%234169E1?style=flat-square&logo=openai&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/HuggingFace-%23FFD21F?style=flat-square&logo=huggingface&logoColor=black"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Transformers-%23FF8B00?style=flat-square&logo=transformers&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/NLTK-%2332B8B8?style=flat-square&logo=nltk&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/Spacy-%23006E9F?style=flat-square&logo=spacy&logoColor=white"
-            /><br />
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/NetworkX-%23017ACC?style=flat-square&logo=python&logoColor=white"
-            /><br />
-          </p>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('skillsPopup')">OK</button>
-            <button onclick="closeWindow('skillsPopup')">Cancel</button>
-          </section>
+    <!-- Skills/Experience popup -->
+    <div class="window popup" id="skillsPopup" style="margin: 32px; width: 450px; display: none">
+      <div class="title-bar">
+        <div class="title-bar-text">My Skills</div>
+
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('skillsPopup')" aria-label="Close"></button>
         </div>
       </div>
+      <div class="window-body" style="max-height: 400px; overflow: scroll">
+        <p>
+          💻 <b>Machine Learning</b><br /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/MATLAB-%23be2909?style=flat-square&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/PyTorch-%23EE4C2C?style=flat-square&logo=pytorch&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/TensorFlow-%23FF6F00?style=flat-square&logo=tensorflow&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Jupyter-%23F37626?style=flat-square&logo=jupyter&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Scikit--learn-%23F7931E?style=flat-square&logo=scikit-learn&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/SciPy-%238CAAE6?style=flat-square&logo=scipy&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Python-%233776AB?style=flat-square&logo=python&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/PyG-%233C2179?style=flat-square&logo=pyg&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Pandas-%23150458?style=flat-square&logo=pandas&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/NumPy-%23013243?style=flat-square&logo=numpy&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/OpenCV-%2300485F?style=flat-square&logo=opencv&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Keras-%23D00000?style=flat-square&logo=keras&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/MLflow-%2300B3E6?style=flat-square&logo=mlflow&logoColor=white" /><br />
+          <br />
+          📱 <b>Apps</b><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Android-%233DDC84?style=flat-square&logo=android&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Kotlin-%237F52FF?style=flat-square&logo=kotlin&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Firebase-%23FFCA28?style=flat-square&logo=firebase&logoColor=white" /><br />
+          <br />
+          🔧 <b>Systems Programming</b><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Java-%23f89820?style=flat-square&logo=java&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/C%23-%23239120?style=flat-square&logo=c-sharp&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/C++-%2300599C?style=flat-square&logo=c%2B%2B&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Assembly-%23323330?style=flat-square&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Git-%23F05032?style=flat-square&logo=git&logoColor=white" /><br />
+          <br />
+          🌐 <b>Web Development</b><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/JavaScript-%23F7DF1E?style=flat-square&logo=javascript&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/HTML5-%23E34F26?style=flat-square&logo=html5&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/CSS3-%231572B6?style=flat-square&logo=css3&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/PHP-%23777BB4?style=flat-square&logo=php&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/WordPress-%2321759B?style=flat-square&logo=wordpress&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/React-%2361DAFB?style=flat-square&logo=react&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Node.js-%33339933?style=flat-square&logo=node.js&logoColor=white" /><br />
+          <br />
+          🛠️ <b>Tools & Platforms</b><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Linux-%23FCC624?style=flat-square&logo=linux&logoColor=black" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/GitHub-%23121011?style=flat-square&logo=github&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/VS%20Code-%23007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Google%20Colab-%23F9AB00?style=flat-square&logo=googlecolab&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Docker-%230db7ed?style=flat-square&logo=docker&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Heroku-%23430098?style=flat-square&logo=heroku&logoColor=white" /><br />
+          <br />
+          🧠 <b>AI</b><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/OpenAI-%234169E1?style=flat-square&logo=openai&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/HuggingFace-%23FFD21F?style=flat-square&logo=huggingface&logoColor=black" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Transformers-%23FF8B00?style=flat-square&logo=transformers&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/NLTK-%2332B8B8?style=flat-square&logo=nltk&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/Spacy-%23006E9F?style=flat-square&logo=spacy&logoColor=white" /><br />
+          <img alt="Static Badge"
+            src="https://img.shields.io/badge/NetworkX-%23017ACC?style=flat-square&logo=python&logoColor=white" /><br />
+        </p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button onclick="closeWindow('skillsPopup')">OK</button>
+          <button onclick="closeWindow('skillsPopup')">Cancel</button>
+        </section>
+      </div>
+    </div>
 
-      <!-- Contact Me popup -->
-      <div
-        class="window popup"
-        id="contactPopup"
-        style="margin: 32px; width: 250px; display: none"
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">Contact Me</div>
+    <!-- Contact Me popup -->
+    <div class="window popup" id="contactPopup" style="margin: 32px; width: 250px; display: none">
+      <div class="title-bar">
+        <div class="title-bar-text">Contact Me</div>
 
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
 
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('contactPopup')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <a href="mailto:thomasjdjoyce@gmail.com?subject=Hello&body=Hi there"
-            >Email Me
-          </a>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('contactPopup')">OK</button>
-            <button onclick="closeWindow('contactPopup')">Cancel</button>
-          </section>
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('contactPopup')" aria-label="Close"></button>
         </div>
       </div>
+      <div class="window-body">
+        <a href="mailto:thomasjdjoyce@gmail.com?subject=Hello&body=Hi there">Email Me
+        </a>
+        <section class="field-row" style="justify-content: flex-end">
+          <button onclick="closeWindow('contactPopup')">OK</button>
+          <button onclick="closeWindow('contactPopup')">Cancel</button>
+        </section>
+      </div>
+    </div>
 
-      <!-- proj popup -->
- 
-<div
-  id="projectsWindow"
-  class="popup-animate popup-mobile"
-        style="top: 0%; left: 0%; position: absolute"
+    <!-- proj popup -->
 
-></div>
+    <div id="projectsWindow" class="popup-animate popup-mobile" style="top: 0%; left: 0%; position: absolute"></div>
 
-      <script>
-        fetch("ProjectsDisplay.html")
-          .then((response) => response.text())
-          .then((html) => {
-            document.getElementById("projectsWindow").innerHTML = html;
-          });
-      </script>
+    <script>
+      fetch("ProjectsDisplay.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("projectsWindow").innerHTML = html;
+        });
+    </script>
 
-      <!-- game -->
-      <div class="window popup popup-mobile" id="chessWindow2" style="display: none">
-        <div class="title-bar">
-          <div class="title-bar-text">Chess</div>
+    <!-- game -->
+    <div class="window popup popup-mobile" id="chessWindow2" style="display: none">
+      <div class="title-bar">
+        <div class="title-bar-text">Chess</div>
 
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
 
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('chessWindow2')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <iframe
-            style="width: 100%; height: 550px; overflow: hidden; border: none"
-            src="https://playpager.com/embed/chess/index.html"
-            title="Online Chess Game"
-            scrolling="no"
-          ></iframe>
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('chessWindow2')" aria-label="Close"></button>
         </div>
       </div>
+      <div class="window-body">
+        <iframe style="width: 100%; height: 550px; overflow: hidden; border: none"
+          src="https://playpager.com/embed/chess/index.html" title="Online Chess Game" scrolling="no"></iframe>
+      </div>
+    </div>
 
-      <!-- paint -->
-      <div
-        class="window popup popup-animate popup-mobile"
-        id="paintWindow"
-        style="
+    <!-- paint -->
+    <div class="window popup popup-animate popup-mobile" id="paintWindow" style="
           position: absolute;
           top: 392px;
           left: 380px;
           z-index: 1000;
           width: 500px;
           height: 190px;
-        "
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">Paint</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button
-              onclick="closeWindow('paintWindow')"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-        <!-- inner box -->
-        <div class="window-body" style="height: calc(100% - 32px); padding: 0">
-          <iframe
-            src="https://jspaint.app/#load:https://i.imgur.com/5fQ98O0.png"
-            style="width: 100%; height: 100%; border: none; display: block"
-          ></iframe>
+        ">
+      <div class="title-bar">
+        <div class="title-bar-text">Paint</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('paintWindow')" aria-label="Close"></button>
         </div>
       </div>
+      <!-- inner box -->
+      <div class="window-body" style="height: calc(100% - 32px); padding: 0">
+        <iframe src="https://jspaint.app/#load:https://i.imgur.com/5fQ98O0.png"
+          style="width: 100%; height: 100%; border: none; display: block"></iframe>
+      </div>
+    </div>
 
-      <!-- taskbar hidden -->
-      <div
-        class="window popup"
-        id="taskBarLinks"
-        style="
+    <!-- taskbar hidden -->
+    <div class="window popup" id="taskBarLinks" style="
           display: none;
           position: fixed;
           left: 2px;
@@ -507,135 +376,116 @@
           width: 200px;
           padding: 0;
           z-index: 1201;
-        "
-      >
-        <div class="title-bar">
-          <div class="title-bar-text">Quick Links</div>
-          
-          <div class="title-bar-controls">
-        
-          </div>
+        ">
+      <div class="title-bar">
+        <div class="title-bar-text">Quick Links</div>
+
+        <div class="title-bar-controls">
+
         </div>
-        <div
-          class="window-body"
-          style="
+      </div>
+      <div class="window-body" style="
             padding: 6px 9px;
             display: flex;
             flex-direction: column;
             gap: 10px;
             align-items: flex-start;
-          "
-        >
-          <a
-            onclick=openWindow("projectsDirectory")
-            target="_blank"
-            style="
+          ">
+        <a onclick=openWindow("projectsDirectory") target="_blank" style="
               display: flex;
               align-items: center;
               gap: 8px;
               text-decoration: none;
               color: #222;
-            "
-          >
-            <img
-              src="assets\globe.png"
-              style="width: 22px; height: 22px"
-              alt="Project Blogs"
-            />
-            <span>Projects/Blogs</span>
-          </a>
-          <a
-            href="https://github.com/tomjoyce1"
-            target="_blank"
-            style="
+            ">
+          <img src="assets\globe.png" style="width: 22px; height: 22px" alt="Project Blogs" />
+          <span>Projects/Blogs</span>
+        </a>
+        <a href="https://github.com/tomjoyce1" target="_blank" style="
               display: flex;
               align-items: center;
               gap: 8px;
               text-decoration: none;
               color: #222;
-            "
-          >
-            <img
-              src="assets\gitlogo.png"
-              style="width: 22px; height: 22px"
-              alt="GitHub"
-            />
-            <span>My GitHub</span>
-          </a>
-        </div>
+            ">
+          <img src="assets\gitlogo.png" style="width: 22px; height: 22px" alt="GitHub" />
+          <span>My GitHub</span>
+        </a>
       </div>
-
     </div>
-  </body>
 
-  <script>
-    document.getElementById("warning-button").onclick = function () {
-      setTimeout(() => {
-        window.location.href = "modern.html";
-      });
-    };
+  </div>
+</body>
 
-    function minimizeWindow(button) {
-      const popup = button.closest(".window.popup");
-      if (!popup) return;
-      popup.style.display = "none";
-    }
-
-function maximizeWindow(button) {
-  const popup = button.closest(".window.popup");
-  if (!popup) return;
-  // Toggle maximized state
-  if (!popup.classList.contains("maximized")) {
-    popup.dataset.prevStyle = popup.getAttribute("style") || "";
-    popup.style.top = "0";
-    popup.style.left = "0";
-    popup.style.width = "100vw";
-    popup.style.height = "100vh";
-    popup.style.margin = "0";
-    popup.style.transform = "none";
-    popup.classList.add("maximized");
-  } else {
-        popup.style.top = "330px";
-    // Restore previous style
-    popup.setAttribute("style", popup.dataset.prevStyle);
-    popup.classList.remove("maximized");
-  }
-}
-
-    function isWindowOpen(id) {
-      const el = document.getElementById(id);
-      return el && el.style.display !== "none";
-    }
-
-    // Attach handlers to all popup window buttons after DOM is loaded
-    window.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".window.popup").forEach((popup) => {
-        const controls = popup.querySelectorAll(".title-bar-controls button");
-        if (controls.length === 3) {
-          controls[0].onclick = function () {
-            minimizeWindow(this);
-          };
-          controls[1].onclick = function () {
-            maximizeWindow(this);
-          };
-          // controls[2] is close, already set inline with closeWindow('popupId')
-        }
-      });
-
-      // Animate popups
-      const popups = [
-        document.getElementById("aboutMe"),
-        document.getElementById("nuke"),
-        document.getElementById("paintWindow"),
-        document.getElementById("projectsWindow"),
-      ];
-      let delay = 400; // ms
-      popups.forEach((popup, i) => {
-        if (!popup) return;
-        setTimeout(() => {
-          popup.classList.add("popup-animate-in");
-        }, delay * (i + 1));
-      });
+<script>
+  document.getElementById("warning-button").onclick = function () {
+    setTimeout(() => {
+      window.location.href = "modern.html";
     });
-  </script>
+  };
+
+  function minimizeWindow(button) {
+    const popup = button.closest(".window.popup");
+    if (!popup) return;
+    popup.style.display = "none";
+  }
+
+  function maximizeWindow(button) {
+    const popup = button.closest(".window.popup");
+    if (!popup) return;
+    // Toggle maximized state
+    if (!popup.classList.contains("maximized")) {
+      popup.dataset.prevStyle = popup.getAttribute("style") || "";
+      popup.style.top = "0";
+      popup.style.left = "0";
+      popup.style.width = "100vw";
+      popup.style.height = "100vh";
+      popup.style.margin = "0";
+      popup.style.transform = "none";
+      popup.classList.add("maximized");
+    } else {
+      popup.style.top = "330px";
+      // Restore previous style
+      popup.setAttribute("style", popup.dataset.prevStyle);
+      popup.classList.remove("maximized");
+    }
+  }
+
+  function isWindowOpen(id) {
+    const el = document.getElementById(id);
+    return el && el.style.display !== "none";
+  }
+
+  // Attach handlers to all popup window buttons after DOM is loaded
+  window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".window.popup").forEach((popup) => {
+      const controls = popup.querySelectorAll(".title-bar-controls button");
+      if (controls.length === 3) {
+        controls[0].onclick = function () {
+          minimizeWindow(this);
+        };
+        controls[1].onclick = function () {
+          maximizeWindow(this);
+        };
+        // controls[2] is close, already set inline with closeWindow('popupId')
+      }
+    });
+
+    // Animate popups
+    const popups = [
+      document.getElementById("aboutMe"),
+      document.getElementById("nuke"),
+      document.getElementById("paintWindow"),
+      document.getElementById("projectsWindow"),
+    ];
+    let delay = 400; // ms
+    popups.forEach((popup, i) => {
+      if (!popup) return;
+      setTimeout(() => {
+        popup.classList.add("popup-animate-in");
+      }, delay * (i + 1));
+    });
+  });
+</script>
+
 </html>
