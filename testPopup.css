@@ -121,6 +121,16 @@ font-weight:100;
   font-family: monospace;
 }
 
+.white-screen{
+  background-color: #ffffff;
+  height: 100%;
+  padding:20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: black;
+  font-family: monospace;
+}
+
 .screen {
   flex-grow: 1;
   background-color: var(--bg-color);

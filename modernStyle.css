@@ -1,3 +1,48 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 6px;
+  padding-left:8px;
+  padding-right:8px;
+
+}
+.video-card {
+  background-color: #fff;
+  padding: 4px;
+}
+.thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius:7px;
+}
+.video-info {
+  margin-top: 3px;
+}
+.video-title {
+  font-weight: bold;
+  font-size: 13px;
+  margin: 4px 0;
+}
+.video-desc {
+  font-size: 11px;
+  padding-left: 26px;
+  color: #333;
+}
+.lang-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+@media (max-width: 768px) {
+  .popup {
+    display: none;
+  }
+}
+
 * {
   --nav-height: 3rem;
   --max-height: 100vh;
@@ -11,7 +56,7 @@
   --glass-white-color: rgba(255, 255, 255, 0.1);
   --footer-start-height: 4em;
   --sun-gradient: linear-gradient(135deg, #ffef80, #ecaa00);
-  font-family: poppins, monospace;
+  font-family: "SF Pro", "SF Pro Display", "SF Pro Icons", "Helvetica Neue";
 }
 
 .desktop-icons-new {
