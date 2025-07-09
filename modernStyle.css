@@ -55,7 +55,7 @@
   --glass-white-color: rgba(255, 255, 255, 0.1);
   --footer-start-height: 4em;
   --sun-gradient: linear-gradient(135deg, #ffef80, #ecaa00);
-  font-family: "SF Pro", "SF Pro Display", "SF Pro Icons", "Helvetica Neue";
+  font-family:   "Segoe UI", "Open Sans", "Roboto";
 }
 
 .desktop-icons-new {
@@ -154,6 +154,8 @@ nav #nav-container {
   position:absolute;
   right:4px;
   gap: 0rem !important;
+    font-size:large;
+
 }
 
 #first-container div svg,
@@ -179,12 +181,12 @@ nav #nav-container {
 
 #sistema-info {
   height: 80%;
-  gap: 0.5em;
+  gap: 0.2em;
   padding: 0 0.5em;
   border-radius: 0.5em;
   transition-duration: 0.5s;
   color: white;
-  margin-right: 0.5em;
+  /* margin-right: 0.5em; */
   display: grid;
   grid-auto-flow: column;
 }
@@ -300,17 +302,15 @@ nav #nav-container {
 }
 
 .app-container-header {
-  font-size: 0.95em;
-  font-weight: bold;
+  font-size: 0.8em;
+  font-weight:500;
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 1.5em 1em;
   align-items: center;
 }
 
-.app-container-header span {
-  filter: drop-shadow(0 0 1em white);
-}
+
 
 .app-container-header div {
   background-color: rgba(255, 255, 255, 0.1);
