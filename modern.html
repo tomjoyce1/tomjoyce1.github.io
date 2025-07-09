@@ -190,6 +190,30 @@ function maximizeWindow(button) {
 <!-- end ms paint -->
 
 
+<!-- start blog projects -->
+  
+
+
+
+<div id="aaa" style="top: 0; left: 0; height:100%; position: absolute">
+  <style scoped>
+    @import url('https://unpkg.com/98.css');
+    @import url('style.css');
+
+  </style>
+  <script>
+    fetch("ProjectsDisplay.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("aaa").innerHTML = html;
+      })
+      .catch((error) => console.error("big error",error));
+  </script>
+</div>
+
+<!-- end blog proj -->
+
+
 <!-- start about me -->
    <div class="popup" id="aboutMe" style=" top:0px; left:0%;  width: 300px;
   height: 200px;">
