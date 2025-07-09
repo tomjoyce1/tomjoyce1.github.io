@@ -193,7 +193,7 @@ function maximizeWindow(button) {
 <!-- start blog projects -->
   
 
-   <div class="popup" id="msPaint" style="  width: 700px;
+   <div class="popup" id="blogProjects" style="  width: 700px;
   height: 400px;">
     <div class="title-bar">
       <div class="title-bar-left">
@@ -207,12 +207,12 @@ function maximizeWindow(button) {
             padding-right: 6px;
           "
         />
-        <div class="title-bar-title">Paint</div>
+        <div class="title-bar-title">blogProjects</div>
       </div>
       <div class="title-bar-right">
-        <div class="min-btn" onclick="closeWindow('msPaint')"></div>
+        <div class="min-btn" onclick="closeWindow('blogProjects')"></div>
         <div class="max-btn" onclick="maximizeWindow(this)"></div>
-        <div class="close-btn" onclick="closeWindow('msPaint')"></div>
+        <div class="close-btn" onclick="closeWindow('blogProjects')"></div>
       </div>
     </div>
     <div class="white-screen">
@@ -367,17 +367,7 @@ HTML, CSS, JavaScript
 
 
 
-<!-- 
-  <script>
-    fetch("ProjectsDisplay.html")
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById("aaa").innerHTML = html;
-      })
-      .catch((error) => console.error("big error",error));
-  </script> -->
 
-<!-- end blog proj -->
 
 
 <!-- start about me -->
@@ -407,8 +397,8 @@ HTML, CSS, JavaScript
  
             • I’m studying Immersive Software Engineering<br />
             • I worked on Anomaly Detection ML models at
-            <b>Amazon Web Services </b>, generative AI at
-            <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.
+            Amazon Web Services, generative AI at
+            Johnson & Johnson and React microservices at BD.
             <br />
             • Undisputed ISE Chess Champ.
 </div>
@@ -419,7 +409,7 @@ HTML, CSS, JavaScript
 <!-- end about me -->
 
 <!-- start contact -->
-   <div class="popup" id="contactMe" style="  width: 200px;
+   <div class="popup" id="contactPopup" style="  width: 200px;
   height: 130px;">
     <div class="title-bar">
       <div class="title-bar-left">
@@ -436,9 +426,9 @@ HTML, CSS, JavaScript
         <div class="title-bar-title">contactMe</div>
       </div>
       <div class="title-bar-right">
-        <div class="min-btn" onclick="closeWindow('contactMe')"></div>
+        <div class="min-btn" onclick="closeWindow('contactPopup')"></div>
         <div class="max-btn" onclick="maximizeWindow(this)"></div>
-        <div class="close-btn" onclick="closeWindow('contactMe')"></div>
+        <div class="close-btn" onclick="closeWindow('contactPopup')"></div>
       </div>
     </div>
     <div class="neutral-screen">
@@ -816,13 +806,13 @@ HTML, CSS, JavaScript
       </div>
 
       <!-- icon 4 -->
-      <div class="icon" onclick="openWindow('projectsList')">
+      <div class="icon" onclick="openWindow('blogProjects')">
         <img src="assets\modernIcons\projects.webp" alt="CV" />
         <span>Projects</span>
       </div>
 
       <!-- icon 5 -->
-      <div class="icon" onclick="openWindow('skillsPopup')">
+      <div class="icon" onclick="openWindow('mySkills')">
         <img src="assets\modernIcons\skillsexperience.webp" alt="CV" />
         <span>Skills</span>
       </div>
@@ -840,18 +830,18 @@ HTML, CSS, JavaScript
       </div>
 
       <!-- icon 8 -->
-      <div class="icon" onclick="openWindow('chessWindow2')">
+      <div class="icon" onclick="openWindow('chessPopup')">
         <img src="assets\modernIcons\chess.webp" alt="CV" />
         <span>Chess</span>
       </div>
 
       <!-- icon 8 -->
-      <div class="icon" onclick="openWindow('paintWindow')">
+      <div class="icon" onclick="openWindow('msPaint')">
         <img src="assets\modernIcons\paint.webp" alt="CV" />
         <span>Paint</span>
       </div>
       <!-- icon 9 -->
-      <div class="icon" onclick="openWindow('blogsWindow')">
+      <div class="icon" onclick="openWindow('blogProjects')">
         <img src="assets\modernIcons\blog.png" alt="CV" />
 
         <span>Blogs</span>
