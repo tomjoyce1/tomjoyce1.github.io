@@ -53,9 +53,10 @@
 }
 
 .title-bar-right {
+  cursor: auto;
   flex-shrink: 0;
   background-color: #333333;
-
+  
   height: 100%;
   display: flex;
 }
