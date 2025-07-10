@@ -69,7 +69,7 @@ widgetBtn.addEventListener("click", function () {
 shutdownBtn.addEventListener("click", function () {
   shutdownContainer.classList.toggle("pc-off");
   alert(
-    "Now, Windows 11 (web edition) \nwill shut down virtually, \n\nTo return to the homepage, \nclick anywhere on the screen!"
+    "Confirm Power Off? \nDon't do something you'll regret by powering this off. Hit 'esc' to cancel."
   );
 });
 
@@ -118,40 +118,26 @@ document.addEventListener("mouseup", function () {
   document.onmousemove = null;
 });
 
-for (let i = 0; i < appIcons.length; i++) {
-  comingSoonSpan.style.display = "grid";
-  tabImage.style.display = "none";
-  appIcons[i].addEventListener("click", function () {
-    windowsTab.style.display = "grid";
-    comingSoonSpan.style.display = "none";
-    tabImage.style.display = "grid";
-    let appName = appIcons[i].querySelector("span").textContent;
-    tabName.textContent = appName;
-    let appImage = appIcons[i].querySelector("img").src;
-    tabImage.src = appImage;
-  });
-}
+// for (let i = 0; i < appIcons.length; i++) {
+//   comingSoonSpan.style.display = "grid";
+//   tabImage.style.display = "none";
+//   appIcons[i].addEventListener("click", function () {
+//     windowsTab.style.display = "grid";
+//     comingSoonSpan.style.display = "none";
+//     tabImage.style.display = "grid";
+//     let appName = appIcons[i].querySelector("span").textContent;
+//     tabName.textContent = appName;
+//     let appImage = appIcons[i].querySelector("img").src;
+//     tabImage.src = appImage;
+//   });
+// }
 
 // Button to close the tab (hide the tab)
 closeBtn.addEventListener("click", function () {
   windowsTab.style.display = "none";
 });
 
-// Create an icon in the nav and hide the tab (minimize)
-minBtn.addEventListener("click", function () {
-  windowsTab.style.display = "none";
-  let newDiv = document.createElement("div");
-  let newImg = document.createElement("img");
-  newImg.src = tabImage.src;
-  newDiv.appendChild(newImg);
-  navIconContainer.appendChild(newDiv);
-  console.log("MINIMIZED TAB");
-});
-
 // Maximize the tab to screen size
-maxBtn.addEventListener("click", function () {
-  moveTabTop();
-});
 
 // Open notifications panel
 notifBtns.addEventListener("click", function () {
@@ -168,6 +154,21 @@ function moveTabLeft() {
   windowsTab.style.transitionDuration = "0.5s";
   console.log("LEFT TAB");
 }
+
+// Create an icon in the nav and hide the tab (minimize)
+minBtn.addEventListener("click", function () {
+  windowsTab.style.display = "none";
+  let newDiv = document.createElement("div");
+  let newImg = document.createElement("img");
+  newImg.src = tabImage.src;
+  newDiv.appendChild(newImg);
+  navIconContainer.appendChild(newDiv);
+  console.log("MINIMIZED TAB");
+});
+
+maxBtn.addEventListener("click", function () {
+  moveTabTop();
+});
 
 function moveTabTop() {
   windowsTab.style.left = "0px";
