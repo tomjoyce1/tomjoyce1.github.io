@@ -54,12 +54,25 @@
     display: none;
   }
 
+  .w11-start-section {
+    width: 95%;
+    padding: 12px;
+  }
+  .app-icon {
+    width: 20px;
+  }
+
+  .app-icon span {
+    font-size: 10px;
+  }
+  .input-div-start input {
+    font-size: 15px;
+  }
   /* windows start screen centred on phones */
   .centre-popup {
-    position: absolute;
-    top: 0;
-    left: 0;
- 
+    width:95%;
+    padding:10px;
+    margin-bottom: 182px;
   }
 }
 
