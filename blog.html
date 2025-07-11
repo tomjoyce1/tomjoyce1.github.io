@@ -1,82 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Projects</title>
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
-    <link rel="stylesheet" href="./blogStyle.css" />
-  </head>
 
-  <body>
-    <!-- the grid overlay and window go here -->
-    <div class="body-grid-overlay">
-      <svg
-        width="100%"
-        height="100%"
-        style="position: absolute; top: 0; left: 0"
-      >
-        <defs>
-          <pattern
-            id="grid"
-            width="32"
-            height="32"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M 32 0 L 0 0 0 32"
-              fill="none"
-              stroke="gray"
-              stroke-width="0.7"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
+<head>
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="./blogStyle.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <!-- the grid overlay and window go here -->
+  <div class="body-grid-overlay">
+    <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0">
+      <defs>
+        <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="gray" stroke-width="0.7" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text" id="blogTitle">Title</div>
     </div>
 
-    <div class="window">
-      <div class="title-bar">
-        <div class="title-bar-text" id="blogTitle">Title</div>
-      </div>
-
-      <div class="window-body">
-              <button aria-label="Close" onclick="window.history.back()">
-        < Back
+    <div class="window-body">
+      <button aria-label="Close" class="close-btn" onclick="window.history.back()">
+        < Back 
       </button>
-    </br>    </br>     
-        <main class="nyt-article-container" id="blogContent"></main>
-      </div>
+          </br> </br>
+          <main class="nyt-article-container" id="blogContent"></main>
     </div>
+  </div>
 
-    <!-- script should be at the end -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const blogId = params.get("blog");
+  <!-- script should be at the end -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get("blog");
 
-      const blogTitle = blogId || "Blog";
+    const blogTitle = blogId || "Blog";
 
-      document.getElementById("blogTitle").textContent = blogTitle;
-      if (blogId) {
-        fetch(`blogs/${blogId}.md`)
-          .then((response) => {
-            if (!response.ok) throw new Error("Not found");
-            return response.text();
-          })
-          .then((md) => {
-            // Convert markdown to HTML
-            const html = marked.parse(md);
-            document.getElementById("blogContent").innerHTML = html;
-          })
-          .catch(() => {
-            document.getElementById("blogContent").innerHTML =
-              "<p>Sorry, this blog does not exist.</p>";
-            document.getElementById("blogTitle").textContent = "Blog Not Found";
-          });
-      } else {
-        document.getElementById("blogContent").innerHTML =
-          "<p>Sorry, this blog does not exist.</p>";
-        document.getElementById("blogTitle").textContent = "Blog Not Found";
-      }
-    </script>
-  </body>
+    document.getElementById("blogTitle").textContent = blogTitle;
+    if (blogId) {
+      fetch(`blogs/${blogId}.md`)
+        .then((response) => {
+          if (!response.ok) throw new Error("Not found");
+          return response.text();
+        })
+        .then((md) => {
+          // Convert markdown to HTML
+          const html = marked.parse(md);
+          document.getElementById("blogContent").innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById("blogContent").innerHTML =
+            "<p>Sorry, this blog does not exist.</p>";
+          document.getElementById("blogTitle").textContent = "Blog Not Found";
+        });
+    } else {
+      document.getElementById("blogContent").innerHTML =
+        "<p>Sorry, this blog does not exist.</p>";
+      document.getElementById("blogTitle").textContent = "Blog Not Found";
+    }
+  </script>
+</body>
+
 </html>

@@ -1,3 +1,16 @@
+/* mobile responsive */
+@media only screen and (max-width: 768px) {
+  #second-container {
+    display: none !important;
+  }
+  #widget-div {
+    display: none !important;
+  }
+  #search-div {
+    display: none !important;
+  }
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -40,6 +53,14 @@
   .popup {
     display: none;
   }
+
+  /* windows start screen centred on phones */
+  .centre-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+ 
+  }
 }
 
 * {
@@ -55,7 +76,13 @@
   --glass-white-color: rgba(255, 255, 255, 0.1);
   --footer-start-height: 4em;
   --sun-gradient: linear-gradient(135deg, #ffef80, #ecaa00);
-  font-family:   "Segoe UI", "Open Sans", "Roboto";
+  font-family: "Segoe UI", "Open Sans", "Roboto";
+}
+
+@media (max-width: 768px) {
+  .desktop-icons-new {
+    padding-top: 40px;
+  }
 }
 
 .desktop-icons-new {
@@ -65,7 +92,7 @@
   padding: 20px;
   width: 300px;
 }
-.app-icon a{
+.app-icon a {
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -73,7 +100,6 @@
   justify-content: center;
 }
 
- 
 .icon {
   text-decoration: none;
   color: white;
@@ -159,11 +185,10 @@ nav #nav-container {
 }
 
 #second-container {
-  position:absolute;
-  right:4px;
+  position: absolute;
+  right: 4px;
   gap: 0rem !important;
-    font-size:large;
-
+  font-size: large;
 }
 
 #first-container div svg,
@@ -177,9 +202,9 @@ nav #nav-container {
 }
 
 #first-container {
-  position:absolute;
-  left:50%;
-   margin: auto;
+  position: absolute;
+  left: 50%;
+  margin: auto;
 }
 
 #second-container #sistema-info div {
@@ -260,8 +285,8 @@ nav #nav-container {
 }
 
 #w11-start-section {
-  opacity:0;
-  visibility:hidden;
+  opacity: 0;
+  visibility: hidden;
   color: white;
   align-self: center;
   justify-self: center;
@@ -275,12 +300,12 @@ nav #nav-container {
   overflow: hidden;
   border: 2px solid var(--glass-white-color);
   /* transition: bottom 0.5s cubic-bezier(0.4, 0.01, 0.15, 1.1); */
-  transition-timing-function: cubic-bezier(.4, .01, .15, 1.1);
+  transition-timing-function: cubic-bezier(0.4, 0.01, 0.15, 1.1);
 }
 
 #w11-start-section.on-visible-start {
-  opacity:1;
-  visibility:visible;
+  opacity: 1;
+  visibility: visible;
   margin-bottom: 4%;
 }
 
@@ -311,14 +336,12 @@ nav #nav-container {
 
 .app-container-header {
   font-size: 0.8em;
-  font-weight:500;
+  font-weight: 500;
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 1.5em 1em;
   align-items: center;
 }
-
-
 
 .app-container-header div {
   background-color: rgba(255, 255, 255, 0.1);
@@ -342,7 +365,7 @@ nav #nav-container {
   padding: 0 0 0 0.5em;
   fill: white !important;
 }
- 
+
 #second-app-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -474,7 +497,7 @@ label input {
 
 .start-section,
 .spegni-pc-start-section {
-    align-items: center;
+  align-items: center;
 
   display: flex;
   flex-direction: row;
@@ -563,7 +586,7 @@ label input {
 }
 
 #widget-section {
-  margin-top:-10em;
+  margin-top: -10em;
   display: grid;
   grid-template-areas: "meteo calendario" "galleria calendario" "galleria video" "todo todo";
   gap: 1em;
