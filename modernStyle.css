@@ -52,7 +52,7 @@
 @media (max-width: 768px) {
   .popup {
     display: none;
-    padding-top: calc(env(safe-area-inset-top) + 50px) !important;
+    margin-top: calc(env(safe-area-inset-top) + 20px) !important;
   }
    
 
