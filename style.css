@@ -1,3 +1,33 @@
+@media (max-width: 768px) {
+  .popup {
+    display: none;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  #msPaint {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  #msPaint iframe {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+}
+
 #taskBarLinks .window-body a:hover {
   background: #e0e0e0;
 }
@@ -23,13 +53,13 @@
 
 :root {
   --vibrate-button-colour: #ff3c00;
-    --vibrate-button-colour2: #ff0000;
-
+  --vibrate-button-colour2: #ff0000;
 }
 .warning-button:hover {
   background-color: var(--vibrate-button-colour2);
   color: #1a0000;
-  box-shadow: 0 0 20px var(--vibrate-button-colour), 0 0 40px var(--vibrate-button-colour), 0 0 60px var(--vibrate-button-colour);
+  box-shadow: 0 0 20px var(--vibrate-button-colour),
+    0 0 40px var(--vibrate-button-colour), 0 0 60px var(--vibrate-button-colour);
 
   animation: confetti-burst 0.5s infinite;
 }
@@ -244,10 +274,4 @@
   height: 20px;
   vertical-align: middle;
   margin-right: 4px;
-}
-
-@media (max-width: 768px) {
-  .popup {
-    display: none;
-  }
 }
