@@ -377,17 +377,13 @@
         ">
       <div class="title-bar">
         <div class="title-bar-text">Quick Links</div>
-
+      
         <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-
-          <button aria-label="Maximize"></button>
+ 
           <button onclick="closeWindow('taskBarLinks')" aria-label="Close"></button>
         </div>
 
-        <div class="title-bar-controls">
 
-        </div>
       </div>
 
 
@@ -398,23 +394,11 @@
             gap: 10px;
             align-items: flex-start;
           ">
-        <a onclick=openWindow("projectsDirectory") target="_blank" style="
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              text-decoration: none;
-              color: #222;
-            ">
+        <a onclick=openWindow("projectsDirectory") target="_blank" class="windows-start-retro-popup">
           <img src="assets\globe.png" style="width: 22px; height: 22px" alt="Project Blogs" />
           <span>Projects/Blogs</span>
         </a>
-        <a href="https://github.com/tomjoyce1" target="_blank" style="
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              text-decoration: none;
-              color: #222;
-            ">
+        <a href="https://github.com/tomjoyce1" target="_blank" class="windows-start-retro-popup"> 
           <img src="assets\gitlogo.png" style="width: 22px; height: 22px" alt="GitHub" />
           <span>My GitHub</span>
         </a>

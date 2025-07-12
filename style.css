@@ -155,7 +155,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.windows-start-retro-popup {
+  font-family: "MS Sans Serif", "Segoe UI", Arial, sans-serif;
 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #222;
+}
 .window-body p br {
   margin-bottom: 8px;
   content: "";
