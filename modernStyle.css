@@ -229,7 +229,8 @@ body {
   height: 100vh;
   width: var(--max-width);
   margin: 0;
-  padding: 0;
+ 
+  padding: 0 0 env(safe-area-inset-top) 0;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
