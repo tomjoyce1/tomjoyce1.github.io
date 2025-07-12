@@ -56,7 +56,7 @@
 
   .app-icon {
     width: 20px;
-    width:100%;
+    width: 100%;
   }
 
   .app-icon span {
@@ -76,7 +76,7 @@
   #w11-start-section {
     width: 75vw;
     max-width: 75vw;
-    margin:0 auto;
+    margin: 0 auto;
     /* height: 125vw;
     max-height: 325vh;     */
   }
@@ -86,17 +86,17 @@
     padding: 10px;
   }
 
-    #article-div {
-    display:none;
+  #article-div {
+    display: none;
   }
 
-  .hide-on-mobile{
-    display:none !important;
+  .hide-on-mobile {
+    display: none !important;
   }
-  #apps-container{
-    height:400px !important;
+  #apps-container {
+    height: calc(100vh - 50px) !important;
     min-height: 50% !important;
-        width:100% !important;
+    width: 100% !important;
     max-width: 100% !important;
   }
   #second-app-container {
@@ -175,7 +175,7 @@
 
 body {
   /* height: var(--max-height); */
-height:100vh;
+  height: 100vh;
   width: var(--max-width);
   margin: 0;
   padding: 0;
@@ -209,7 +209,6 @@ nav {
   backdrop-filter: blur(5em);
   border-top: 1px solid rgba(255, 255, 255, 0.075);
 }
-
 
 nav #nav-container {
   display: flex;
