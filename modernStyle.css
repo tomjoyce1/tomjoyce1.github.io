@@ -64,22 +64,22 @@
   height: 24px !important;
 }
       .title-bar-title {
-        font-size: 18px !important; /* increase font size of title text */
+        font-size: 16px !important; /* increase font size of title text */
       }
 
 
       .title-bar-right {
         .min-btn, .max-btn, .close-btn {
           width: 48px; /* increase width of buttons */
-          height: 48px; /* increase height of buttons */
+height: 40px;
             display: flex !important;
     justify-content: center !important;
  
           }
 
 .min-btn::before {
-          width: 24px; /* increase width of min button icon */
-          height: 8px; /* increase height of min button icon */
+          width: 16px; /* increase width of min button icon */
+          height: 4px; /* increase height of min button icon */
           border-bottom: 3px solid #fff; 
            display: flex !important;  /* Center the icon inside the button */
     justify-content: center !important;  /* Horizontally center the icon */
@@ -89,17 +89,18 @@
         }
 
         .max-btn::before {
-          width: 14px; /* increase width of max button icon */
-          height: 14px; /* increase height of max button icon */
+          width: 9px; /* increase width of max button icon */
+          height: 9px; /* increase height of max button icon */
+          justify-content: center !important;
           border: 3px solid #fff; /* increase size of max button icon */
         }
 
         .close-btn::before {
-          font-size: 56px; 
-          
+          font-size: 33px; 
           width: 24px !important; /* increase width of close button icon */
- 
-         margin:-22px !important; increase height of close button icon
+            font-weight: 400 !important;
+
+         margin:-7px !important;  
         }
       }
 
