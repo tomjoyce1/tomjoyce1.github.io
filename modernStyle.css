@@ -52,12 +52,9 @@
 @media (max-width: 768px) {
   .popup {
     display: none;
+    padding-top: calc(env(safe-area-inset-top) + 10px) !important;
   }
-body{
-padding-top: calc(env(safe-area-inset-top) + 10px);}
-
-
-    
+   
 
   /* windows start screen centred on phones */
 
