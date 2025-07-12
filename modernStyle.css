@@ -99,12 +99,19 @@ overflow:hidden;
     #w11-start-section {
     width: 90vw;
     max-width: 90vw;
-    margin: 0 auto;
+    margin: 0 auto !important;
     height: auto;
+    
+    position: absolute !important;
+    top:80% !important;
+    left:50% !important;
+  transform: translate(-50%, -15%);
+
     max-height: 80vh;
+    
     padding: 0;
     box-sizing: border-box;
-        overflow: hidden;
+    overflow: hidden;
    
   }
   #w11-start-section > * {
@@ -118,7 +125,8 @@ overflow:hidden;
 height:333px;
      padding: 10px;
     box-sizing: border-box;
-    margin 0 auto;  overflow : hidden; 
+    margin 0 auto;          overflow-y: scroll;
+
   }
   #second-app-container {
     display: grid;
