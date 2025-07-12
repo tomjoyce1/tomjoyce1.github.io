@@ -56,7 +56,7 @@
   }
    
  .title-bar {
-      height: 40px; /* increase height of title bar */
+      height: 40px; 
  
     }
      .title-bar-left img {
@@ -64,13 +64,13 @@
   height: 24px !important;
 }
       .title-bar-title {
-        font-size: 16px !important; /* increase font size of title text */
+        font-size: 16px !important;  
       }
 
 
       .title-bar-right {
         .min-btn, .max-btn, .close-btn {
-          width: 48px; /* increase width of buttons */
+          width: 48px; 
 height: 40px;
             display: flex !important;
     justify-content: center !important;
@@ -78,25 +78,24 @@ height: 40px;
           }
 
 .min-btn::before {
-          width: 16px; /* increase width of min button icon */
-          height: 4px; /* increase height of min button icon */
+          width: 16px;  
+          height: 4px;  
           border-bottom: 3px solid #fff; 
-           display: flex !important;  /* Center the icon inside the button */
-    justify-content: center !important;  /* Horizontally center the icon */
+           display: flex !important;   
+    justify-content: center !important;   
     align-items: center !important; 
   
 
         }
 
         .max-btn::before {
-          width: 9px; /* increase width of max button icon */
-          height: 9px; /* increase height of max button icon */
+          width: 9px;  
+          height: 9px;  
           justify-content: center !important;
-          border: 3px solid #fff; /* increase size of max button icon */
-        }
+          border: 3px solid #fff; 
 
         .close-btn::before {
-     content: "\00D7"; /* Unicode for × */
+     content: "\00D7";  
   font-size: 33px;
   font-weight: 400;
   width: 24px;
@@ -106,17 +105,17 @@ height: 40px;
   align-items: center;
   justify-content: center;
 
-  line-height: 1;       /* Ensures no extra vertical space */
+  line-height: 1;      
   padding-top: 2px;
-  margin: 0;            /* Remove manual vertical offset */
+  margin: 0;            
   text-align: center;
 
         }
       }
 
       img {
-        width: 20px; /* increase width of icon */
-        height: 20px; /* increase height of icon */
+        width: 20px;  
+        height: 20px;  
       }
 
 
@@ -141,26 +140,10 @@ height: 40px;
   .hide-on-mobile {
     display: none !important;
   }
-  /* .app-icon {
-text-align: center;    
- min-width:0;
-overflow:hidden;
-  }
-  .app-icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 auto;
-  }
-  .app-icon span {
-    font-size: 10px;
-      display: block;
-  padding-top: 4px;
-  } */
-
-   
+    .window-body img {
+  margin: 5px;
+  flex-basis: 80px; 
+}
 
   .input-div-start input {
     font-size: 15px;
