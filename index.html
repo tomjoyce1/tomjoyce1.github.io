@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
 
@@ -132,25 +131,25 @@
       </div>
       <div class="window-body">
         <div class="field-row" style="align-items: flex-start;">
-  <div style="margin-right: 16px;">
-    <img src="assets/tjoyce.jpg" alt="me" style="height: 170px" />
-  </div>
-  <div style="display: flex; flex-direction: column; justify-content: space-between; height: 170px;">
-    <p style="margin: 0;">
-      • I’m studying Immersive Software Engineering<br />
-      • I worked on Anomaly Detection ML models at
-      <b>Amazon Web Services</b>, generative AI at
-      <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.<br />
-      • Undisputed ISE Chess Champ.
-    </p>
-    <section class="field-row" style="justify-content: flex-end; gap: 6px; margin-top: 10px;">
-      <button onclick="closeWindow('aboutMe')">OK</button>
-      <button onclick="closeWindow('aboutMe')">Cancel</button>
-    </section>
-  </div>
-</div>
+          <div style="margin-right: 16px;">
+            <img src="assets/tjoyce.jpg" alt="me" style="height: 170px" />
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; height: 170px;">
+            <p style="margin: 0;">
+              • I’m studying Immersive Software Engineering<br />
+              • I worked on Anomaly Detection ML models at
+              <b>Amazon Web Services</b>, generative AI at
+              <b>Johnson & Johnson</b> and React microservices at <b>BD</b>.<br />
+              • Undisputed ISE Chess Champ.
+            </p>
+            <section class="field-row" style="justify-content: flex-end; gap: 6px; margin-top: 10px;">
+              <button onclick="closeWindow('aboutMe')">OK</button>
+              <button onclick="closeWindow('aboutMe')">Cancel</button>
+            </section>
+          </div>
+        </div>
 
-     
+
       </div>
     </div>
 
@@ -188,7 +187,7 @@
           <button onclick="closeWindow('skillsPopup')" aria-label="Close"></button>
         </div>
       </div>
-      <div class="window-body" style=" overflow: scroll">
+      <div class="window-body" style="max-height: 400px; overflow: scroll">
         <p>
           💻 <b>Machine Learning</b><br /><br />
           <img alt="Static Badge"
@@ -380,9 +379,18 @@
         <div class="title-bar-text">Quick Links</div>
 
         <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+
+          <button aria-label="Maximize"></button>
+          <button onclick="closeWindow('taskBarLinks')" aria-label="Close"></button>
+        </div>
+
+        <div class="title-bar-controls">
 
         </div>
       </div>
+
+
       <div class="window-body" style="
             padding: 6px 9px;
             display: flex;
