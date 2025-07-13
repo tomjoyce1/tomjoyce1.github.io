@@ -177,7 +177,7 @@ height: 40px;
 height:333px;
      padding: 10px;
     box-sizing: border-box;
-    margin 0 auto;          overflow-y: scroll;
+    margin: 0 auto;          overflow-y: scroll;
 
   }
   #second-app-container {
