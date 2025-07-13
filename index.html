@@ -103,8 +103,7 @@
 
     <!-- start menu -->
     <div id="taskbar">
-      <button class="start-button"
-        onclick="isWindowOpen('taskBarLinks') ? closeWindow('taskBarLinks') : openWindow('taskBarLinks')">
+      <button class="start-button" onclick=handleStartButtonClick()>
         <img src="./assets/w95.png" style="height: 26px" />
       </button>
     </div>
@@ -312,7 +311,7 @@
 
     <!-- proj popup -->
 
-    <div id="projectsWindow" class="popup-animate popup-mobile" style="top: 0%; left: 0%; position: absolute"></div>
+    <div id="projectsWindow" class=" popup-animate popup-mobile" style="top: 0%; left: 0%; position: absolute"></div>
 
     <script>
       fetch("ProjectsDisplay.html")
@@ -377,9 +376,9 @@
         ">
       <div class="title-bar">
         <div class="title-bar-text">Quick Links</div>
-      
+
         <div class="title-bar-controls">
- 
+
           <button onclick="closeWindow('taskBarLinks')" aria-label="Close"></button>
         </div>
 
@@ -398,7 +397,7 @@
           <img src="assets\globe.png" style="width: 22px; height: 22px" alt="Project Blogs" />
           <span>Projects/Blogs</span>
         </a>
-        <a href="https://github.com/tomjoyce1" target="_blank" class="windows-start-retro-popup"> 
+        <a href="https://github.com/tomjoyce1" target="_blank" class="windows-start-retro-popup">
           <img src="assets\gitlogo.png" style="width: 22px; height: 22px" alt="GitHub" />
           <span>My GitHub</span>
         </a>
@@ -414,6 +413,24 @@
       window.location.href = "modern.html";
     });
   };
+
+  function handleStartButtonClick() {
+    if (window.innerWidth < 768) {
+      window.location.href = "modern.html";
+    }
+    else {
+
+      if (isWindowOpen('taskBarLinks')) {
+        closeWindow('taskBarLinks')
+      }
+
+      else {
+        openWindow('taskBarLinks')
+      }
+
+    }
+
+  }
 
   function minimizeWindow(button) {
     const popup = button.closest(".window.popup");
