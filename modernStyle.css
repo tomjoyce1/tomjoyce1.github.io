@@ -54,76 +54,72 @@
     display: none;
     margin-top: calc(env(safe-area-inset-top) + 30px) !important;
   }
-   
- .title-bar {
-      height: 40px; 
- 
+
+  .title-bar {
+    height: 40px;
+  }
+  .title-bar-left img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .title-bar-title {
+    font-size: 16px !important;
+  }
+
+  .title-bar-right {
+    .min-btn,
+    .max-btn,
+    .close-btn {
+      width: 48px;
+      height: 40px;
+      display: flex !important;
+      justify-content: center !important;
     }
-     .title-bar-left img {
-  width: 24px !important;
-  height: 24px !important;
-}
-      .title-bar-title {
-        font-size: 16px !important;  
+
+    .min-btn::before {
+      width: 16px;
+      height: 4px;
+      border-bottom: 3px solid #fff;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+
+    .max-btn::before {
+      width: 9px;
+      height: 9px;
+      justify-content: center !important;
+      border: 3px solid #fff;
+
+      .close-btn::before {
+        content: "\00D7";
+        font-size: 33px;
+        font-weight: 400;
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        line-height: 1;
+        padding-top: 2px;
+        margin: 0;
+        text-align: center;
       }
+    }
 
-
-      .title-bar-right {
-        .min-btn, .max-btn, .close-btn {
-          width: 48px; 
-height: 40px;
-            display: flex !important;
-    justify-content: center !important;
- 
-          }
-
-.min-btn::before {
-          width: 16px;  
-          height: 4px;  
-          border-bottom: 3px solid #fff; 
-           display: flex !important;   
-    justify-content: center !important;   
-    align-items: center !important; 
-  
-
-        }
-
-        .max-btn::before {
-          width: 9px;  
-          height: 9px;  
-          justify-content: center !important;
-          border: 3px solid #fff; 
-
-        .close-btn::before {
-     content: "\00D7";  
-  font-size: 33px;
-  font-weight: 400;
-  width: 24px;
-  height: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  line-height: 1;      
-  padding-top: 2px;
-  margin: 0;            
-  text-align: center;
-
-        }
-      }
-
-      img {
-        width: 20px;  
-        height: 20px;  
-      }
-
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
 
   /* windows start screen centred on phones */
 
   #cerca-input-start {
     width: 100%;
-     max-width: 100%;
+    max-width: 100%;
     padding-left: 10px;
     margin-right: 10px;
   }
@@ -140,76 +136,75 @@ height: 40px;
   .hide-on-mobile {
     display: none !important;
   }
-    .window-body img {
-  margin: 5px;
-  flex-basis: 80px; 
-}
+  .window-body img {
+    margin: 5px;
+    flex-basis: 80px;
+  }
 
   .input-div-start input {
     font-size: 15px;
   }
-    #w11-start-section {
+  #w11-start-section {
     width: 90vw;
     max-width: 90vw;
     margin: 0 auto !important;
     height: auto;
-    
+
     position: absolute !important;
-    top:80% !important;
-    left:50% !important;
-  transform: translate(-50%, -15%);
+    top: 80% !important;
+    left: 50% !important;
+    transform: translate(-50%, -15%);
 
     max-height: 80vh;
- 
+
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
-   
   }
   #w11-start-section > * {
-    max-height: unset;  
-    overflow-y: visible; 
+    max-height: unset;
+    overflow-y: visible;
   }
-  
+
   #apps-container {
     width: 100%;
     max-width: 100%;
-height:333px;
-     padding: 10px;
+    height: 333px;
+    padding: 10px;
     box-sizing: border-box;
-    margin: 0 auto;          overflow-y: scroll;
-
+    margin: 0 auto;
+    overflow-y: scroll;
   }
   #second-app-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)) !important;     
-    gap:4px;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)) !important;
+    gap: 4px;
     width: 100%;
-       height: auto;
-  max-height: none;
-  overflow: visible;
+    height: auto;
+    max-height: none;
+    overflow: visible;
 
     box-sizing: border-box;
-   }
-}
-  .app-icon {
-text-align: center;    
- min-width:0;
-overflow:hidden;
   }
-  .app-icon img {
+}
+.app-icon {
+  text-align: center;
+  min-width: 0;
+  overflow: hidden;
+}
+.app-icon img {
   width: 40px;
   height: 40px;
   object-fit: contain;
   justify-content: center !important;
   align-items: center !important;
   margin: 0 auto;
-  }
-  .app-icon span {
-    font-size: 10px;
-      display: block;
+}
+.app-icon span {
+  font-size: 10px;
+  display: block;
   padding-top: 4px;
-  }
+}
 * {
   --nav-height: 3rem;
   --max-height: 100vh;
@@ -239,7 +234,6 @@ overflow:hidden;
   padding: 20px;
   width: 300px;
 }
-
 
 .icon {
   text-decoration: none;
@@ -277,7 +271,7 @@ body {
   height: 100vh;
   width: var(--max-width);
   margin: 0;
- padding:0;
+  padding: 0;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;

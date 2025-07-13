@@ -202,4 +202,88 @@ function openOneWindowCloseOther() {
   }
 }
 
-  
+// Get the current time
+function getDate() {
+  let currentDate = new Date();
+
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1;
+  let year = currentDate.getFullYear();
+
+  let hour = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+
+  let timeContainer = document.getElementById("orario-data");
+  let calendarContainer = document.getElementById("calendario-data");
+
+  if (hour < 10 && minutes < 10) {
+    timeContainer.innerHTML = "0" + hour + ":" + "0" + minutes;
+  } else if (hour < 10) {
+    timeContainer.innerHTML = "0" + hour + ":" + minutes;
+  } else if (minutes < 10) {
+    timeContainer.innerHTML = hour + ":" + "0" + minutes;
+  } else {
+    timeContainer.innerHTML = hour + ":" + minutes;
+  }
+
+  if (day < 10 && month < 10) {
+    calendarContainer.innerHTML = "0" + day + "/" + "0" + month + "/" + year;
+  } else if (day < 10) {
+    calendarContainer.innerHTML = "0" + day + "/" + month + "/" + year;
+  } else if (month < 10) {
+    calendarContainer.innerHTML = day + "/" + "0" + month + "/" + year;
+  } else {
+    calendarContainer.innerHTML = day + "/" + month + "/" + year;
+  }
+
+  document.getElementById("sistema-data").title =
+    timeContainer.innerHTML + "  " + calendarContainer.innerHTML;
+
+  setTimeout(function () {
+    getDate();
+  }, 60000);
+}
+
+// Initialize functions
+dragSelectorLogic();
+getDate();
+
+function unsupportedDevice() {
+  let currentWidthContainer = document.getElementById("width-attuale");
+  let currentHeightContainer = document.getElementById("height-attuale");
+
+  let widthExplanation = document.getElementById("width-spiegazione");
+  let heightExplanation = document.getElementById("height-spiegazione");
+
+  checkSupport();
+
+  window.addEventListener("resize", function () {
+    checkSupport();
+  });
+
+  function checkSupport() {
+    if (window.innerWidth < 800) {
+      widthExplanation.innerHTML =
+        "WIDTH ERROR: You need <b>800px</b>" + "   " + "to view this page";
+      currentWidthContainer.innerHTML = window.innerWidth + "px";
+      widthExplanation.style.color = "rgb(255, 0, 47)";
+    } else {
+      widthExplanation.innerHTML = "Your screen width is correct!";
+      currentWidthContainer.innerHTML = "";
+      widthExplanation.style.color = "rgb(0, 255, 157)";
+    }
+
+    if (window.innerHeight < 600) {
+      heightExplanation.innerHTML =
+        "HEIGHT ERROR: You need <b>600px</b>" + "   " + "to view this page";
+      currentHeightContainer.innerHTML = window.innerHeight + "px";
+      heightExplanation.style.color = "rgb(255, 0, 47)";
+    } else {
+      heightExplanation.innerHTML = "Your screen height is correct!";
+      currentHeightContainer.innerHTML = "";
+      heightExplanation.style.color = "rgb(0, 255, 157)";
+    }
+  }
+}
+
+unsupportedDevice();
