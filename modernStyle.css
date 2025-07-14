@@ -90,7 +90,7 @@
       height: 9px;
       justify-content: center !important;
       border: 3px solid #fff;
-
+ 
       .close-btn::before {
         content: "\00D7";
         font-size: 33px;

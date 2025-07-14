@@ -94,14 +94,15 @@
   color: white;
   content: "\d7";
   display: block;
-  font-weight: 200;
+  font-weight: 400;
 
   align-items: center;
   justify-content: center;
-  font-size: 15pt;
+  font-size: 24pt;
   width: 15px;
   margin: auto;
-  margin-top: 1px;
+  margin-top: -4px;
+ 
 }
 
 .close-btn:hover::before {
