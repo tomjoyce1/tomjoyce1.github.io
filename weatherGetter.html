@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Fetch</title>
+</head>
+<body>
+  <button id="getWeather">Get Weather</button>
+  <pre id="weatherOutput"></pre>
+
+  <script>
+    // Convert params to URL query string
+    function buildQuery(params) {
+      return Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        .join('&');
+    }
+
+    document.getElementById('getWeather').addEventListener('click', async () => {
+      const output = document.getElementById('weatherOutput');
+      output.textContent = 'Loading...';
+
+      try {
+        const params = {
+          latitude: 53.27,
+          longitude: -9.1,
+          hourly: 'temperature_2m',
+        };
+        const url = `https://api.open-meteo.com/v1/forecast?${buildQuery(params)}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const time = data.hourly.time;
+        const temp = data.hourly.temperature_2m;
+
+        let displayText = '';
+        for (let i = 0; i < 5; i++) {
+          displayText += `${time[i]} - ${temp[i]}°C\n`;
+        }
+
+        output.textContent = displayText;
+      } catch (err) {
+        output.textContent = 'Error fetching weather: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>

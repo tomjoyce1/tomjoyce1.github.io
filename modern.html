@@ -978,77 +978,30 @@
       <div style="grid-area: meteo" id="meteo-widget">
         <div class="widget-header-card">
           <span>Weather</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical"
-            class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 512">
-            <path fill="currentColor"
-              d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z">
-            </path>
-          </svg>
+      
         </div>
         <div class="content-widget">
           <div class="sole-meteo"></div>
           <div class="temperatura-container">
-            <span>20</span>
-            <span>°C</span>
+              <span id="oneReadingWeatherOutput"></span>
+
+           <span>°C</span>
           </div>
         </div>
         <a class="btn-meteo-widget"
-          href="https://weather.com/it-IT/tempo/oggi/l/62aee98dba8cc9c051a3753c27e85efd93f931abdd92a0010ab567ecfeb93d64"
-          target="_blank">Location</a>
+           >Location: Ireland</a>
       </div>
-      <div style="grid-area: calendario">
+      <!-- second one -->
+      <div style="" id="meteo-widget">
         <div class="widget-header-card">
-          <span>Calendar</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical"
-            class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 512">
-            <path fill="currentColor"
-              d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z">
-            </path>
-          </svg>
-        </div>
-        <div class="coming-soon-widget">comeeeeing soon...</div>
+        <pre id="weatherOutput" style="font-weight:500;"></pre>
+
       </div>
-      <div style="grid-area: galleria">
-        <div class="widget-header-card">
-          <span>Gallery</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical"
-            class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 512">
-            <path fill="currentColor"
-              d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z">
-            </path>
-          </svg>
-        </div>
-        <div class="coming-soon-widget">comingdddd soon...</div>
-      </div>
-      <div style="grid-area: video">
-        <div class="widget-header-card">
-          <span>Video</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical"
-            class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 512">
-            <path fill="currentColor"
-              d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z">
-            </path>
-          </svg>
-        </div>
-        <div class="coming-soon-widget">cossssming soon...</div>
-      </div>
-      <div style="grid-area: todo">
-        <div class="widget-header-card">
-          <span>Todo</span>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-vertical"
-            class="svg-inline--fa fa-ellipsis-vertical" role="img" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 512">
-            <path fill="currentColor"
-              d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z">
-            </path>
-          </svg>
-        </div>
-        <div class="coming-soon-widget">comaaaing soon...</div>
-      </div>
+              <a class="btn-meteo-widget" 
+    >Latest Weather Stats</a>
+     </div>
+
+
     </section>
     <section id="notification-section">
 
@@ -1212,6 +1165,50 @@
         }
       }, 500);
 
+
+      // weather button script
+      function buildQuery(params) {
+        return Object.keys(params)
+          .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+          .join('&');
+      }
+
+      document.getElementById('widget-div').addEventListener('click', async () => {
+        const output = document.getElementById('weatherOutput');
+
+        const oneReadingWeatherOutput = document.getElementById('oneReadingWeatherOutput');
+        output.textContent = oneReadingWeatherOutput.textContent = 'Loading...';
+
+        try {
+          const params = {
+            latitude: 53.27,
+            longitude: -9.1,
+            hourly: 'temperature_2m',
+          };
+          const url = `https://api.open-meteo.com/v1/forecast?${buildQuery(params)}`;
+
+          const res = await fetch(url);
+          const data = await res.json();
+
+          const time = data.hourly.time;
+          const temp = data.hourly.temperature_2m;
+
+          let displayText = '';
+          for (let i = 0; i < 5; i++) {
+            displayText += `${time[i]} - ${temp[i]}°C\n`;
+
+            if(i == 0){
+              oneReadingWeatherOutput.textContent = `${temp[0]}`
+            }
+          }
+
+          output.textContent = displayText;
+        } catch (err) {
+          output.textContent = 'Error fetching weather: ' + err.message;
+        }
+      });
+
+      // min window
       function minimizeWindow(button) {
         const window = button.closest(".title-bar").parentNode;
         const windowsTab = document.getElementById("windowsTab");

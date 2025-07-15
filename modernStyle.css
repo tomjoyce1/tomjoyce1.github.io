@@ -722,7 +722,7 @@ label input {
 }
 
 #widget-section {
-  margin-top: -10em;
+  margin-top: -1em;
   display: grid;
   grid-template-areas: "meteo calendario" "galleria calendario" "galleria video" "todo todo";
   gap: 1em;

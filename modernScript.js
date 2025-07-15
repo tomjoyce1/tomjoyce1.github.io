@@ -245,45 +245,4 @@ function getDate() {
 }
 
 // Initialize functions
-dragSelectorLogic();
 getDate();
-
-function unsupportedDevice() {
-  let currentWidthContainer = document.getElementById("width-attuale");
-  let currentHeightContainer = document.getElementById("height-attuale");
-
-  let widthExplanation = document.getElementById("width-spiegazione");
-  let heightExplanation = document.getElementById("height-spiegazione");
-
-  checkSupport();
-
-  window.addEventListener("resize", function () {
-    checkSupport();
-  });
-
-  function checkSupport() {
-    if (window.innerWidth < 800) {
-      widthExplanation.innerHTML =
-        "WIDTH ERROR: You need <b>800px</b>" + "   " + "to view this page";
-      currentWidthContainer.innerHTML = window.innerWidth + "px";
-      widthExplanation.style.color = "rgb(255, 0, 47)";
-    } else {
-      widthExplanation.innerHTML = "Your screen width is correct!";
-      currentWidthContainer.innerHTML = "";
-      widthExplanation.style.color = "rgb(0, 255, 157)";
-    }
-
-    if (window.innerHeight < 600) {
-      heightExplanation.innerHTML =
-        "HEIGHT ERROR: You need <b>600px</b>" + "   " + "to view this page";
-      currentHeightContainer.innerHTML = window.innerHeight + "px";
-      heightExplanation.style.color = "rgb(255, 0, 47)";
-    } else {
-      heightExplanation.innerHTML = "Your screen height is correct!";
-      currentHeightContainer.innerHTML = "";
-      heightExplanation.style.color = "rgb(0, 255, 157)";
-    }
-  }
-}
-
-unsupportedDevice();
