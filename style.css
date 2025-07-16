@@ -18,14 +18,14 @@
   }
 
   .warning-button {
-    background-color: var(--vibrate-button-colour2);
-    color: #1a0000;
-
-    box-shadow: 0 0 10px var(--vibrate-button-colour),
-      0 0 20px var(--vibrate-button-colour),
-      0 0 30px var(--vibrate-button-colour);
-
     animation: mobile-shake-glow 0.3s infinite !important;
+
+    background-color: var(--vibrate-button-colour2) !important;
+    color: #1a0000 !important;
+
+    box-shadow: 0 0 10px var(--vibrate-button-colour) !important,
+      0 0 20px var(--vibrate-button-colour) !important,
+      0 0 30px var(--vibrate-button-colour) !important;
   }
 
   @keyframes mobile-shake-glow {
