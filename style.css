@@ -16,38 +16,39 @@
     top: 50% !important;
     height: 130px !important;
   }
-
   .warning-button {
-    animation: mobile-shake-glow 0.3s infinite !important;
+    background-color: var(--vibrate-button-colour2);
+    color: #1a0000;
+    box-shadow: 0 0 20px var(--vibrate-button-colour),
+      0 0 40px var(--vibrate-button-colour),
+      0 0 60px var(--vibrate-button-colour);
 
-    background-color: var(--vibrate-button-colour2) !important;
-    color: #1a0000 !important;
-
-    box-shadow: 0 0 10px var(--vibrate-button-colour) !important,
-      0 0 20px var(--vibrate-button-colour) !important,
-      0 0 30px var(--vibrate-button-colour) !important;
+    animation: confetti-burst 0.5s infinite !important;
   }
-
-  @keyframes mobile-shake-glow {
+  :root {
+    --vibrate-button-colour: #ff3c00;
+    --vibrate-button-colour2: #ff0000;
+  }
+  @keyframes confetti-burst {
     0% {
-      transform: translate(0, 0) rotate(0deg);
-      box-shadow: 0 0 10px var(--vibrate-button-colour);
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00;
     }
     25% {
-      transform: translate(-2px, 1px) rotate(-1deg);
-      box-shadow: 0 0 20px var(--vibrate-button-colour);
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 0 20px #ff3c00, 0 0 30px #ff3c00;
     }
     50% {
-      transform: translate(2px, -1px) rotate(1deg);
-      box-shadow: 0 0 30px var(--vibrate-button-colour);
+      transform: scale(1.2) rotate(-3deg);
+      box-shadow: 0 0 30px #ff3c00, 0 0 50px #ff3c00;
     }
     75% {
-      transform: translate(-2px, 1px) rotate(-1deg);
-      box-shadow: 0 0 20px var(--vibrate-button-colour);
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 20px #ff3c00, 0 0 40px #ff3c00;
     }
     100% {
-      transform: translate(0, 0) rotate(0deg);
-      box-shadow: 0 0 10px var(--vibrate-button-colour);
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00;
     }
   }
 
