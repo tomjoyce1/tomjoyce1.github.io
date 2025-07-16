@@ -69,7 +69,7 @@
   .title-bar-right {
     .min-btn,
     .max-btn,
-    .close-btn {
+  {
       width: 48px;
       height: 40px;
       display: flex !important;
@@ -90,24 +90,8 @@
       height: 9px;
       justify-content: center !important;
       border: 3px solid #fff;
- 
-      .close-btn::before {
-        content: "\00D7";
-        font-size: 33px;
-        font-weight: 400;
-        width: 24px;
-        height: 24px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        line-height: 1;
-        padding-top: 2px;
-        margin: 0;
-        text-align: center;
-      }
     }
+ 
 
     img {
       width: 20px;

@@ -11,13 +11,7 @@ body {
   position: relative;
 }
 
-/* MOBILE-SPECIFIC STYLING */
-@media (max-width: 768px) {
-  .close-btn {
-    font-size: 12px !important;
-    height: 35px !important;
-  }
-}
+
 
 .body-grid-overlay {
   pointer-events: none;

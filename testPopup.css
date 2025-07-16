@@ -89,12 +89,26 @@
   margin: auto;
   margin-top: 12px;
 }
+@media only screen and (max-width: 768px) {
+  .close-btn::before {
+    color: rgb(255, 255, 255) !important;
+    content: "\d7";
+    font-weight: 400 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24pt !important;
+    width: 15px !important;
+    padding-right: 12px !important;
+    margin-top: -6px !important;
+  }
+}
 
 .close-btn::before {
-  color: white;
+  color: rgb(255, 255, 255);
   content: "\d7";
   display: block;
-  font-weight: 400;
+  font-weight: 400 !important;
 
   align-items: center;
   justify-content: center;
@@ -102,7 +116,6 @@
   width: 15px;
   margin: auto;
   margin-top: -4px;
- 
 }
 
 .close-btn:hover::before {
