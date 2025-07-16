@@ -139,10 +139,6 @@ closeBtn.addEventListener("click", function () {
 
 // Maximize the tab to screen size
 
-// Open notifications panel
-notifBtns.addEventListener("click", function () {
-  notifContainer.classList.toggle("notification-on");
-});
 
 function moveTabLeft() {
   windowsTab.style.left = "0px";
