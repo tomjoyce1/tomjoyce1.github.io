@@ -25,7 +25,7 @@
       0 0 20px var(--vibrate-button-colour),
       0 0 30px var(--vibrate-button-colour);
 
-    animation: mobile-shake-glow 0.3s infinite;
+    animation: mobile-shake-glow 0.3s infinite !important;
   }
 
   @keyframes mobile-shake-glow {
