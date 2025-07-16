@@ -23,7 +23,7 @@
       0 0 40px var(--vibrate-button-colour),
       0 0 60px var(--vibrate-button-colour);
 
-    animation: confetti-burst 0.5s infinite !important;
+    animation: confetti-burst 1.1s infinite !important;
   }
   :root {
     --vibrate-button-colour: #ff3c00;
@@ -35,15 +35,15 @@
       box-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00;
     }
     25% {
-      transform: scale(1.1) rotate(3deg);
+      transform: scale(1.2) rotate(4deg);
       box-shadow: 0 0 20px #ff3c00, 0 0 30px #ff3c00;
     }
     50% {
-      transform: scale(1.2) rotate(-3deg);
+      transform: scale(1.4) rotate(-4deg);
       box-shadow: 0 0 30px #ff3c00, 0 0 50px #ff3c00;
     }
     75% {
-      transform: scale(1.1) rotate(2deg);
+      transform: scale(1.2) rotate(3deg);
       box-shadow: 0 0 20px #ff3c00, 0 0 40px #ff3c00;
     }
     100% {
