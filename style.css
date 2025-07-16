@@ -9,7 +9,47 @@
     margin: 0 !important;
     z-index: 9999 !important;
   }
+  .popup-mobile-nuke {
+    width: 80% !important;
+    margin-right: 20% !important;
+    margin-left: 10% !important;
+    top: 50% !important;
+    height: 130px !important;
+  }
 
+  .warning-button {
+    background-color: var(--vibrate-button-colour2);
+    color: #1a0000;
+
+    box-shadow: 0 0 10px var(--vibrate-button-colour),
+      0 0 20px var(--vibrate-button-colour),
+      0 0 30px var(--vibrate-button-colour);
+
+    animation: mobile-shake-glow 0.3s infinite;
+  }
+
+  @keyframes mobile-shake-glow {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      box-shadow: 0 0 10px var(--vibrate-button-colour);
+    }
+    25% {
+      transform: translate(-2px, 1px) rotate(-1deg);
+      box-shadow: 0 0 20px var(--vibrate-button-colour);
+    }
+    50% {
+      transform: translate(2px, -1px) rotate(1deg);
+      box-shadow: 0 0 30px var(--vibrate-button-colour);
+    }
+    75% {
+      transform: translate(-2px, 1px) rotate(-1deg);
+      box-shadow: 0 0 20px var(--vibrate-button-colour);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+      box-shadow: 0 0 10px var(--vibrate-button-colour);
+    }
+  }
 
   .title-bar {
     height: 40px;
@@ -84,10 +124,6 @@
   animation: radioactive-pulse 0.5s infinite alternate;
 }
 
-:root {
-  --vibrate-button-colour: #ff3c00;
-  --vibrate-button-colour2: #ff0000;
-}
 .warning-button:hover {
   background-color: var(--vibrate-button-colour2);
   color: #1a0000;
@@ -96,7 +132,10 @@
 
   animation: confetti-burst 0.5s infinite;
 }
-
+:root {
+  --vibrate-button-colour: #ff3c00;
+  --vibrate-button-colour2: #ff0000;
+}
 @keyframes confetti-burst {
   0% {
     transform: scale(1) rotate(0deg);

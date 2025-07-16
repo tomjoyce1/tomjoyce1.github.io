@@ -147,7 +147,8 @@
     </div>
 
     <!-- nuke -->
-    <div class="window popup popup-animate" id="nuke" style="position: absolute; top: 312px; left: 690px; width: 250px">
+    <div class="window popup popup-animate popup-mobile-nuke" id="nuke"
+      style="position: absolute; top: 312px; left: 690px; width: 250px">
       <div class="title-bar">
         <div class="title-bar-text">Don't Press</div>
 
@@ -180,7 +181,7 @@
           <button onclick="closeWindow('skillsPopup')" aria-label="Close"></button>
         </div>
       </div>
-      <div class="window-body" style="max-height: 400px; overflow-y: scroll">
+      <div class="window-body" style=" height:80vh; overflow-y: scroll">
 
         <p>
           💻 <b>Machine Learning</b> <br /> <br />
@@ -340,7 +341,7 @@
 
     <!-- proj popup -->
 
-    <div id="projectsWindow" class=" popup-animate popup-mobile" style="top: 0%; left: 0%; position: absolute"></div>
+    <div id="projectsWindow" class=" popup-animate  " style="top: 0%; left: 0%; position: absolute"></div>
 
     <script>
       fetch("ProjectsDisplay.html")
@@ -526,6 +527,14 @@
       }, delay * (i + 1));
     });
   });
+
+  if (window.innerWidth <= 768) {
+    setTimeout(function () {
+      document.getElementById("nuke").style.display = "block";
+    }, 10000);
+  }
+
+
 </script>
 
 </html>
