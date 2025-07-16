@@ -99,23 +99,25 @@
     justify-content: center !important;
     font-size: 24pt !important;
     width: 15px !important;
-    padding-right: 12px !important;
-    margin-top: -6px !important;
+     position: relative;
+    top:-5px; 
+    left:4px;
   }
 }
+@media only screen and (min-width: 769px) {
+  .close-btn::before {
+    color: rgb(255, 255, 255);
+    content: "\d7";
+    display: block;
+    font-weight: 50 !important;
 
-.close-btn::before {
-  color: rgb(255, 255, 255);
-  content: "\d7";
-  display: block;
-  font-weight: 400 !important;
-
-  align-items: center;
-  justify-content: center;
-  font-size: 24pt;
-  width: 15px;
-  margin: auto;
-  margin-top: -4px;
+    align-items: center;
+    justify-content: center;
+    font-size: 17pt;
+    width: 15px;
+    margin: auto;
+    margin-top: -1px;
+  }
 }
 
 .close-btn:hover::before {
